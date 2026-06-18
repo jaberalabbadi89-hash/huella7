@@ -1,0 +1,404 @@
+/* ==========================================================================
+   AHC DESIGN SYSTEM - CORE VARIABLES
+   ========================================================================== */
+:root {
+    --ahc-color-primary-green: #62a144;      /* Official AHC Green */
+    --ahc-color-green-hover: #4d8235;
+    --ahc-color-dark: #1e293b;               /* Deep slate for text */
+    --ahc-color-light: #f8fafc;
+    --ahc-blur-intensity: 12px;
+    --ahc-transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Light/Dark dynamic semi-transparent shadows */
+    --ahc-shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.03);
+    --ahc-border-glass: rgba(255, 255, 255, 0.3);
+    --ahc-bg-glass: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================================================
+   GLASSMORPHISM HEADER COMPONENT (BEM: .ahc-header)
+   ========================================================================== */
+.ahc-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--ahc-bg-glass);
+    border-bottom: 1px solid var(--ahc-border-glass);
+    box-shadow: var(--ahc-shadow-glass);
+    transition: var(--ahc-transition-smooth);
+}
+
+/* Fallback for browsers that do not support backdrop-filter */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    .ahc-header {
+        background-color: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(var(--ahc-blur-intensity));
+        -webkit-backdrop-filter: blur(var(--ahc-blur-intensity));
+    }
+}
+
+/* Modifier: Sticky or Scrolled Header */
+.ahc-header--scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px 0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.ahc-header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ahc-header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--ahc-color-primary-green);
+    transition: var(--ahc-transition-smooth);
+}
+
+.ahc-header__logo:hover {
+    transform: scale(1.02);
+}
+
+.ahc-header__nav-list {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.ahc-header__nav-link {
+    color: var(--ahc-color-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: var(--ahc-transition-smooth);
+}
+
+.ahc-header__nav-link:hover,
+.ahc-header__nav-link--active {
+    color: var(--ahc-color-primary-green);
+    background-color: rgba(98, 161, 68, 0.08);
+}
+
+/* ==========================================================================
+   BENTO BOX GRID COMPONENT (BEM: .ahc-bento)
+   ========================================================================== */
+.ahc-bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+/* Base Bento Card */
+.ahc-bento-card {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ahc-bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    border-color: rgba(98, 161, 68, 0.2);
+}
+
+/* Card sizing configurations */
+.ahc-bento-card--large {
+    grid-column: span 8;
+    grid-row: span 2;
+}
+
+.ahc-bento-card--medium {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.ahc-bento-card--small {
+    grid-column: span 4;
+    grid-row: span 1;
+}
+
+.ahc-bento-card--highlight {
+    background: linear-gradient(135deg, #f0f7ed 0%, #ffffff 100%);
+    border-left: 4px solid var(--ahc-color-primary-green);
+}
+
+/* Card internal content structure */
+.ahc-bento-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ahc-color-dark);
+    margin-bottom: 8px;
+}
+
+.ahc-bento-card__desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Responsive Grid Adapters */
+@media (max-width: 1024px) {
+    .ahc-bento-card--large {
+        grid-column: span 12;
+    }
+    .ahc-bento-card--medium {
+        grid-column: span 6;
+    }
+    .ahc-bento-card--small {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 640px) {
+    .ahc-bento {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .ahc-bento-card,
+    .ahc-bento-card--large,
+    .ahc-bento-card--medium,
+    .ahc-bento-card--small {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+}
+
+/* ==========================================================================
+   MOODLE / EDWISER DASHBOARD NOISE CLEANUP OVERRIDES
+   ========================================================================== */
+
+/* Hide default distracting Moodle Blocks */
+#block-region-side-pre, 
+#block-region-side-post,
+.block_online_users,
+.block_calendar_month,
+.block_private_files,
+.block_recent_activity {
+    display: none !important;
+}
+
+/* Widen dashboard content area after removing blocks */
+#region-main.has-blocks {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* Modernizing course list cards */
+.cocurse-card, 
+.dashboard-card,
+.edwiser-course-card {
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.cocurse-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 15px -3px rgba(98, 161, 68, 0.1) !important;
+    border-color: var(--ahc-color-primary-green) !important;
+}
+
+/* Unifying Moodle buttons to AHC Brand Identity */
+.btn-primary, 
+.btn-secondary.active, 
+.btn-default:hover,
+#page-login-index #loginbtn {
+    background-color: var(--ahc-color-primary-green) !important;
+    border-color: var(--ahc-color-primary-green) !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    transition: var(--ahc-transition-smooth) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--ahc-color-green-hover) !important;
+    border-color: var(--ahc-color-green-hover) !important;
+}
+
+/* ==========================================================================
+   INTERSECTION OBSERVER STATE CLASSES
+   ========================================================================== */
+.ahc-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity;
+}
+
+.ahc-reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   NATIVE DIALOG COMPONENT OVERRIDES
+   ========================================================================== */
+dialog.modal-overlay {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+dialog.modal-overlay[open] {
+    display: flex;
+}
+
+dialog.modal-overlay::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* ==========================================================================
+   DIALOG CARDS COMPONENT (BEM: .ahc-dialog-card)
+   ========================================================================== */
+.ahc-dialog-deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.ahc-dialog-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 420px;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.ahc-dialog-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Flipped modifier class */
+.ahc-dialog-card__inner--flipped {
+    transform: rotateY(180deg);
+}
+
+.ahc-dialog-card__front, 
+.ahc-dialog-card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--ahc-border-card);
+}
+
+.ahc-dialog-card__front {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ed 100%);
+    color: var(--ahc-color-dark);
+}
+
+.ahc-dialog-card__back {
+    background: linear-gradient(135deg, #ffffff 0%, #e2efe0 100%);
+    color: var(--ahc-color-dark);
+    transform: rotateY(180deg);
+}
+
+.ahc-dialog-card__icon {
+    font-size: 2.2rem;
+}
+
+.ahc-dialog-card__text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ahc-color-dark);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.ahc-dialog-card__btn-flip {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    max-width: 140px;
+    background-color: var(--ahc-color-primary-green) !important;
+    color: #ffffff !important;
+    border-color: var(--ahc-color-primary-green) !important;
+}
+
+.ahc-dialog-deck__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 420px;
+    gap: 15px;
+}
+
+.ahc-dialog-deck__btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    max-width: 130px;
+}
+
+.ahc-dialog-deck__progress {
+    font-weight: 700;
+    color: var(--ahc-color-dark);
+    font-size: 0.95rem;
+    user-select: none;
+}
+

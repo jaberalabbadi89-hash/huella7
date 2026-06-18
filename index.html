@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Campus AHC - Plataforma de Aprendizaje Interactivo</title>
+    <meta name="description" content="Plataforma interactiva de la Asociación Huella de Carbono (AHC) para la enseñanza de conceptos climáticos y el cálculo de la huella de carbono.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- H5P Override Style Sheet -->
+    <link rel="stylesheet" href="h5p-overrides.css">
+    <!-- Custom Redesign Styles -->
+    <link rel="stylesheet" href="custom-style.css">
+</head>
+<body>
+    <!-- Background glowing spots -->
+    <div class="glow-bg">
+        <div class="glow-spot glow-1"></div>
+        <div class="glow-spot glow-2"></div>
+        <div class="glow-spot glow-3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="ahc-header navbar">
+        <div class="nav-container ahc-header__container">
+            <a href="#" class="logo ahc-header__logo">
+                <span class="logo-icon">🍃</span>
+                <span class="logo-text">Campus AHC</span>
+            </a>
+            <ul class="nav-links ahc-header__nav-list">
+                <li><a href="#dashboard" class="active ahc-header__nav-link ahc-header__nav-link--active" id="nav-dashboard">Panel de Control</a></li>
+                <li><a href="#backlog" class="ahc-header__nav-link" id="nav-backlog">Backlog</a></li>
+            </ul>
+            <!-- Language Selector Switcher -->
+            <div class="lang-switcher">
+                <button onclick="setLanguage('es')" class="lang-btn active" id="btn-lang-es">ES</button>
+                <button onclick="setLanguage('ca')" class="lang-btn" id="btn-lang-ca">CA</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <header class="hero-section" id="dashboard">
+            <h1 class="hero-title" id="hero-title">Plataforma de Excelencia Ambiental</h1>
+            <p class="hero-subtitle" id="hero-subtitle">Desarrollo de objetos de aprendizaje interactivos H5P para el cálculo de la huella de carbono y concienciación climática de la Asociación Huella de Carbono (AHC).</p>
+        </header>
+
+        <!-- Course Cards Grid Section -->
+        <section class="cards-section">
+            <h2 class="section-title" id="active-oas-title">Objetos de Aprendizaje Activos (OAs)</h2>
+            <div class="ahc-bento" id="cards-grid-container">
+                <!-- Dynamically populated or switchable elements -->
+                
+                <!-- Card 1: OA-01 -->
+                <div class="ahc-bento-card ahc-bento-card--large ahc-bento-card--highlight ahc-reveal course-card" id="card-oa-01">
+                    <div class="card-glow-border"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <span class="card-icon">🧠</span>
+                        </div>
+                        <span class="card-tag tag-high" id="card-tag-01">OA-01 | Alta</span>
+                        <h3 class="card-title" id="card-title-01">Conceptos Climáticos Básicos</h3>
+                        <p class="card-instructor" id="card-inst-01">Instructor: Dra. Anya Sharma</p>
+                        <p class="card-description" id="card-desc-01">Conceptos de calentamiento global, huella de carbono y Net Zero mediante tarjetas didácticas (Dialog Cards).</p>
+                        
+                        <div class="progress-section">
+                            <div class="progress-info">
+                                <span id="card-prog-lbl-01">Progreso del desarrollo</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <button class="btn-card" id="card-btn-01" onclick="viewFicha('OA-01')">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Card 2: OA-02 -->
+                <div class="ahc-bento-card ahc-bento-card--medium ahc-reveal course-card" id="card-oa-02">
+                    <div class="card-glow-border"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <span class="card-icon">📊</span>
+                        </div>
+                        <span class="card-tag tag-high" id="card-tag-02">OA-02 | Alta</span>
+                        <h3 class="card-title" id="card-title-02">Alcances de Emisiones (1, 2, 3)</h3>
+                        <p class="card-instructor" id="card-inst-02">Instructor: Asociación AHC</p>
+                        <p class="card-description" id="card-desc-02">Clasificación de fuentes de emisiones directas e indirectas para organizaciones usando arrastrar y soltar (Drag and Drop).</p>
+                        
+                        <div class="progress-section">
+                            <div class="progress-info">
+                                <span id="card-prog-lbl-02">Progreso del desarrollo</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <button class="btn-card" id="card-btn-02" onclick="viewFicha('OA-02')">Ver ficha</button>
+                    </div>
+                </div>
+
+                <!-- Card 3: OA-03 -->
+                <div class="ahc-bento-card ahc-bento-card--small ahc-reveal course-card" id="card-oa-03">
+                    <div class="card-glow-border"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <span class="card-icon">🎥</span>
+                        </div>
+                        <span class="card-tag tag-high" id="card-tag-03">OA-03 | Alta</span>
+                        <h3 class="card-title" id="card-title-03">Calculadora de Huella de Carbono</h3>
+                        <p class="card-instructor" id="card-inst-03">Instructor: Equipo de Desarrollo Técnico</p>
+                        <p class="card-description" id="card-desc-03">Video interactivo que detalla los pasos para usar e ingresar datos en la calculadora corporativa.</p>
+                        
+                        <div class="progress-section">
+                            <div class="progress-info">
+                                <span id="card-prog-lbl-03">Progreso del desarrollo</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <button class="btn-card" id="card-btn-03" onclick="viewFicha('OA-03')">Ver ficha</button>
+                    </div>
+                </div>
+
+                <!-- Card 4: OA-04 -->
+                <div class="ahc-bento-card ahc-bento-card--small ahc-reveal course-card" id="card-oa-04">
+                    <div class="card-glow-border"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <span class="card-icon">🏠</span>
+                        </div>
+                        <span class="card-tag tag-high" id="card-tag-04">OA-04 | Alta</span>
+                        <h3 class="card-title" id="card-title-04">Emisiones Ocultas en el Hogar</h3>
+                        <p class="card-instructor" id="card-inst-04">Instructor: Ing. Khaled Al-Mansouri</p>
+                        <p class="card-description" id="card-desc-04">Exploración de fuentes de desperdicio de energía y emisiones en el hogar mediante puntos calientes (Image Hotspots).</p>
+                        
+                        <div class="progress-section">
+                            <div class="progress-info">
+                                <span id="card-prog-lbl-04">Progreso del desarrollo</span>
+                                <span>10%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 10%"></div>
+                            </div>
+                        </div>
+                        <button class="btn-card" id="card-btn-04" onclick="viewFicha('OA-04')">Ver detalles</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Backlog Table Section -->
+        <section class="backlog-section" id="backlog">
+            <h2 class="section-title" id="backlog-section-title">Mapa de la Biblioteca y Lista de Tareas (H5P Backlog)</h2>
+            <div class="table-container">
+                <table class="backlog-table">
+                    <thead>
+                        <tr id="table-headers-row">
+                            <th id="th-code">Código</th>
+                            <th id="th-topic">Tema</th>
+                            <th id="th-goal">Objetivo / Acción</th>
+                            <th id="th-type">Tipo H5P Sugerido</th>
+                            <th id="th-priority">Prioridad</th>
+                            <th id="th-status">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="backlog-table-body">
+                        <!-- Filled dynamically by script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Ficha Modal -->
+    <dialog id="ficha-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span id="modal-oa-code" class="modal-tag">OA-XX</span>
+                <h3 id="modal-oa-title" class="modal-title">Título del OA</h3>
+            </div>
+            <div class="modal-body" id="modal-oa-body">
+                <!-- Content will be filled by JS -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Main Javascript File -->
+    <script src="script.js"></script>
+    <!-- Custom Redesign Interactions -->
+    <script src="custom-interactions.js"></script>
+</body>
+</html>
