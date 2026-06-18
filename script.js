@@ -743,6 +743,122 @@ function viewFicha(oaId) {
                 </div>
             `;
             initVideoPlayerState();
+        } else if (oaId === 'OA-04') {
+            // Render dynamic interactive Image Hotspots component
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                    ${currentLanguage === 'es' 
+                        ? 'Explora el plano interactivo de la casa haciendo clic en los puntos calientes para descubrir cómo ahorrar energía:' 
+                        : 'Explora el plànol interactiu de la casa fent clic en els punts calents per descobrir com estalviar energia:'}
+                </p>
+                
+                <div class="ahc-hotspots" id="ahc-hotspots-component">
+                    <div class="ahc-hotspots__container">
+                        <img src="house_layout.png" alt="Plano de la casa" class="ahc-hotspots__image">
+                        
+                        <!-- Hotspot 1: Nevera (Kitchen, bottom left) -->
+                        <div class="ahc-hotspot" style="top: 65%; left: 22%;" id="hotspot-nevera">
+                            <button class="ahc-hotspot__marker" onclick="toggleHotspotTooltip('nevera', event)" aria-label="Nevera / Frigorífic" aria-expanded="false">
+                                <span class="ahc-hotspot__icon">❄️</span>
+                            </button>
+                            <div class="ahc-hotspot__tooltip ahc-hotspot__tooltip--top">
+                                <div class="ahc-hotspot__tooltip-title">
+                                    <span>❄️</span>
+                                    <span>${currentLanguage === 'es' ? 'Nevera / Congelador' : 'Nevera / Congelador'}</span>
+                                </div>
+                                <div class="ahc-hotspot__tooltip-body">
+                                    ${currentLanguage === 'es' 
+                                        ? 'Los frigoríficos antiguos consumen el doble de energía que los modernos. Reemplázalos por modelos eficientes y limpia sus bobinas regularmente.' 
+                                        : 'Els frigorífics antics consumeixen el doble d\'energia que els moderns. Substitueix-los per models eficients i neteja les bobines regularment.'}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 2: Aire Acondicionado (Bedroom, top right) -->
+                        <div class="ahc-hotspot" style="top: 38%; left: 56%;" id="hotspot-aire">
+                            <button class="ahc-hotspot__marker" onclick="toggleHotspotTooltip('aire', event)" aria-label="Aire Acondicionado / Aire Condicionat" aria-expanded="false">
+                                <span class="ahc-hotspot__icon">💨</span>
+                            </button>
+                            <div class="ahc-hotspot__tooltip ahc-hotspot__tooltip--bottom">
+                                <div class="ahc-hotspot__tooltip-title">
+                                    <span>💨</span>
+                                    <span>${currentLanguage === 'es' ? 'Aire Acondicionado' : 'Aire Condicionat'}</span>
+                                </div>
+                                <div class="ahc-hotspot__tooltip-body">
+                                    ${currentLanguage === 'es' 
+                                        ? 'Bajar el aire acondicionado de 24°C aumenta el consumo eléctrico un 8%. Ajústalo a 24°C y limpia los filtros mensualmente.' 
+                                        : 'Abaixar l\'aire condicionat de 24°C augmenta el consum elèctric un 8%. Ajusta\'l a 24°C i neteja els filtres mensualment.'}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 3: Modo Espera (Vampiro) (Living room TV, bottom right) -->
+                        <div class="ahc-hotspot" style="top: 75%; left: 68%;" id="hotspot-espera">
+                            <button class="ahc-hotspot__marker" onclick="toggleHotspotTooltip('espera', event)" aria-label="Modo Espera / Mode Espera" aria-expanded="false">
+                                <span class="ahc-hotspot__icon">🔌</span>
+                            </button>
+                            <div class="ahc-hotspot__tooltip ahc-hotspot__tooltip--top">
+                                <div class="ahc-hotspot__tooltip-title">
+                                    <span>🔌</span>
+                                    <span>${currentLanguage === 'es' ? 'Consumo Vampiro' : 'Consum Vampir'}</span>
+                                </div>
+                                <div class="ahc-hotspot__tooltip-body">
+                                    ${currentLanguage === 'es' 
+                                        ? 'Los aparatos en modo de espera consumen un 10% de electricidad inútilmente. Usa regletas inteligentes y apágalos por completo.' 
+                                        : 'Els aparells en mode d\'espera consumeixen un 10% d\'electricitat inútilment. Utilitza regletes intel·ligents i apaga\'ls completament.'}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 4: Iluminación (Bathroom/Ceiling, top left) -->
+                        <div class="ahc-hotspot" style="top: 25%; left: 33%;" id="hotspot-iluminacion">
+                            <button class="ahc-hotspot__marker" onclick="toggleHotspotTooltip('iluminacion', event)" aria-label="Iluminación / Il·luminació" aria-expanded="false">
+                                <span class="ahc-hotspot__icon">💡</span>
+                            </button>
+                            <div class="ahc-hotspot__tooltip ahc-hotspot__tooltip--right">
+                                <div class="ahc-hotspot__tooltip-title">
+                                    <span>💡</span>
+                                    <span>${currentLanguage === 'es' ? 'Iluminación LED' : 'Il·luminació LED'}</span>
+                                </div>
+                                <div class="ahc-hotspot__tooltip-body">
+                                    ${currentLanguage === 'es' 
+                                        ? 'Las bombillas tradicionales pierden el 90% de energía en forma de calor. Reemplázalas por luces LED, que ahorran un 80%.' 
+                                        : 'Les bombelles tradicionals perden el 90% d\'energia en forma de calor. Substitueix-les per llums LED, que estalvien un 80%.'}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 5: Lavadora (Laundry Room, middle) -->
+                        <div class="ahc-hotspot" style="top: 60%; left: 48%;" id="hotspot-lavadora">
+                            <button class="ahc-hotspot__marker" onclick="toggleHotspotTooltip('lavadora', event)" aria-label="Lavadora / Rentadora" aria-expanded="false">
+                                <span class="ahc-hotspot__icon">🧼</span>
+                            </button>
+                            <div class="ahc-hotspot__tooltip ahc-hotspot__tooltip--left">
+                                <div class="ahc-hotspot__tooltip-title">
+                                    <span>🧼</span>
+                                    <span>${currentLanguage === 'es' ? 'Lavadora Eficiente' : 'Rentadora Eficient'}</span>
+                                </div>
+                                <div class="ahc-hotspot__tooltip-body">
+                                    ${currentLanguage === 'es' 
+                                        ? 'Calentar agua consume el 90% de la energía de la lavadora. Lava la ropa a 30°C para ahorrar electricidad.' 
+                                        : 'Escalfar aigua consumeix el 90% de l\'energia de la rentadora. Rentar la roba a 30°C per estalviar electricitat.'}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="ahc-hotspots__instructions">
+                        <p>💡 ${currentLanguage === 'es' 
+                            ? 'Haz clic en los iconos parpadeantes para descubrir los EcoGestos de ahorro.' 
+                            : 'Fes clic en les icones parpellejants per descobrir els EcoGestos d\'estalvi.'}</p>
+                    </div>
+                </div>
+            `;
+            initHotspotsInteraction();
         } else {
             // Render default technical sheet
             modalOaBody.innerHTML = `
@@ -766,6 +882,11 @@ function closeModal() {
     // Stop simulated video player if running
     if (typeof stopVideoPlayback === 'function') {
         stopVideoPlayback();
+    }
+    
+    // Reset any open hotspots
+    if (typeof closeAllHotspotTooltips === 'function') {
+        closeAllHotspotTooltips();
     }
 }
 
@@ -1215,5 +1336,54 @@ function submitVideoAnswer(timestamp, isCorrect) {
             toggleVideoPlayback();
         }, 600);
     }
+}
+
+// ==========================================================================
+// IMAGE HOTSPOTS INTERACTION LOGIC (OA-04)
+// ==========================================================================
+
+function initHotspotsInteraction() {
+    const component = document.getElementById('ahc-hotspots-component');
+    if (component) {
+        component.addEventListener('click', (e) => {
+            const marker = e.target.closest('.ahc-hotspot__marker');
+            const tooltip = e.target.closest('.ahc-hotspot__tooltip');
+            if (!marker && !tooltip) {
+                closeAllHotspotTooltips();
+            }
+        });
+    }
+}
+
+function toggleHotspotTooltip(id, event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    
+    const targetHotspot = document.getElementById(`hotspot-${id}`);
+    if (targetHotspot) {
+        const isActive = targetHotspot.classList.contains('ahc-hotspot--active');
+        
+        closeAllHotspotTooltips();
+        
+        if (!isActive) {
+            targetHotspot.classList.add('ahc-hotspot--active');
+            const marker = targetHotspot.querySelector('.ahc-hotspot__marker');
+            if (marker) {
+                marker.setAttribute('aria-expanded', 'true');
+            }
+        }
+    }
+}
+
+function closeAllHotspotTooltips() {
+    const hotspots = document.querySelectorAll('.ahc-hotspot');
+    hotspots.forEach(hotspot => {
+        hotspot.classList.remove('ahc-hotspot--active');
+        const marker = hotspot.querySelector('.ahc-hotspot__marker');
+        if (marker) {
+            marker.setAttribute('aria-expanded', 'false');
+        }
+    });
 }
 
