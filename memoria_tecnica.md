@@ -48,3 +48,63 @@ La arquitectura del proyecto está diseñada de forma modular y desacoplada, fac
 * **`script.js`:** Núcleo de la lógica interactiva. Controla el lanzamiento de las modales y el ciclo de vida de los datos de cada actividad (volteo de tarjetas, zonas de drop, sistema de penalización temporal en video y control selectivo de tooltips).
 * **`custom-interactions.js`:** Archivo aislado que ejecuta una instancia de `Intersection Observer` para aplicar animaciones de entrada (`ahc-reveal`) a los elementos de la interfaz solo cuando entran en el viewport del navegador, optimizando el uso de CPU.
 * **`h5p-overrides.css`:** Hoja de estilos externa para inyectar sobre los iframes nativos de H5P. Este archivo aplica selectores de alta especificidad (ej. `.h5p-joubelui-button`) para redefinir el color de los botones del sistema de H5P al verde de la asociación, redondear esquinas y unificar el muelle visual de los diálogos interactivos, todo de manera aislada y sin interferir con las hojas de estilo nativas de Moodle (Edwiser).
+
+---
+
+## 5. Desarrollo Técnico de los Objetos de Aprendizaje (OA-01 a OA-04)
+
+Se han programado funcionalmente cuatro componentes interactivos basados en especificaciones reales de los módulos de aprendizaje:
+
+1. **OA-01 (Dialog Cards - Conceptos Climáticos):** Componente dinámico de tarjetas didácticas. Emplea transiciones CSS 3D (`transform-style: preserve-3d` y `backface-visibility: hidden`) para simular el volteo de tarjetas física mediante la adición selectiva de clases. Soporta navegación secuencial y control de estado idiomático (Español/Catalán).
+2. **OA-02 (Drag and Drop - Abastos de Emisión):** Panel interactivo de clasificación de emisiones. Incorpora algoritmos de barajado aleatorio (Shuffle) al inicializar el objeto de aprendizaje para evitar memorización posicional. Utiliza eventos nativos de arrastre (`dragstart`, `dragover`, `drop`) y valida las respuestas aplicando clases de éxito (`.ahc-draggable--correct`) o error (`.ahc-draggable--incorrect`) según el contenedor de destino.
+3. **OA-03 (Interactive Video - Calculadora Corporativa):** Simulación controlada de reproductor multimedia educativo. Implementa un hilo de ejecución periódica (`setInterval`) para sincronizar el tiempo del video con puntos de control preestablecidos. Al alcanzar paradas obligatorias, pausa el flujo y bloquea la interfaz con un cuestionario modal. Si la respuesta es incorrecta, ejecuta un efecto visual de parpadeo de pantalla en rojo (`@keyframes red-flash`) y retrocede de forma punitiva el video 45 segundos para reforzar el aprendizaje.
+4. **OA-04 (Image Hotspots - Emisiones Ocultas):** Plano interactivo de una vivienda. Emplea un contenedor con posicionamiento relativo e imágenes fluidas (`width: 100%; height: auto;`), sobre el cual se disponen marcadores absolutos configurados al milímetro con porcentajes (`top` y `left`). Esto asegura que los botones interactivos permanezcan inmóviles sobre sus electrodomésticos correspondientes ante cambios de escala. Los marcadores integran una animación de pulsación constante (`@keyframes hotspot-pulse`) y despliegan tooltips con comportamiento tipo acordeón (abrir un punto cierra automáticamente los demás).
+
+### Accesibilidad e Inclusión (A11y):
+Se ha prestado especial atención al cumplimiento de las pautas WCAG 2.1:
+* **Navegación Teclado:** Todos los marcadores y botones interactivos utilizan la etiqueta semántica `<button>` permitiendo el enfoque mediante la tecla Tabulador y el disparo mediante la barra espaciadora o Enter.
+* **Semántica y Atributos Aria:** Se implementaron los atributos `aria-expanded` en tooltips y marcadores, `aria-label` descriptivos de los iconos embebidos, y textos `alt` detallados en las imágenes del plano estructural del hogar.
+* **Contraste de Color:** La paleta de colores empleada (incluyendo el verde `#62a144` y los avisos de error) cumple con la tasa de contraste mínimo de 4.5:1 exigido para textos de lectura.
+
+---
+
+## 6. Gestión de Rendimiento, Accesibilidad y Prevención de Fugas de Memoria
+
+El aseguramiento de la eficiencia del micro-frontend en entornos de producción limitados como Moodle se estructuró bajo tres pilares:
+
+### Optimización del DOM:
+En lugar de cargar estructuras pesadas estáticas, la inyección del DOM se realiza bajo demanda (Lazy Injection) al hacer clic en cada ficha didáctica. El contenido HTML de cada actividad se inyecta dinámicamente mediante `innerHTML` y se limpia automáticamente en la función de cierre.
+
+### Prevención de Fugas de Memoria (Memory Leaks):
+El mayor riesgo de inyección de lógica en reproductores interactivos dentro de ventanas modales es la permanencia de temporizadores de fondo cuando el usuario cierra la ventana. Para mitigar esto, se ha integrado un protocolo de limpieza estricto en la función de cierre global `closeModal()`, la cual detiene la ejecución del temporizador del reproductor mediante `clearInterval(videoPlaybackTimer)`, resetea las variables de estado y restaura los flujos de scroll originales del cuerpo del documento.
+
+### Optimización de Rendimiento en Animaciones:
+El script `custom-interactions.js` optimiza los ciclos de CPU del navegador al apagar el motor del `Intersection Observer` mediante `observer.unobserve(entry.target)` en el instante en que un elemento de la Bento Grid se vuelve visible en pantalla, deteniendo el consumo de recursos de monitorización.
+
+---
+
+## 7. Control de Versiones y Protocolo de Despliegue
+
+La gestión del ciclo de vida del código ha seguido un flujo de trabajo riguroso de ingeniería:
+
+* **Control de Versiones (Git):** Organización del repositorio local bajo una estructura limpia. Se crearon las ramas `develop` para la integración de los componentes en fase de prueba y `main` para los lanzamientos funcionales estables listos para producción.
+* **Sincronización Remota (GitHub):** Puesta en común del código y control de copias mediante la subida de los commits al repositorio en la nube (`origin/main`).
+* **Protección de Archivos (`.gitignore`):** Configuración del filtro para ignorar empaquetados pesados de entrega (como `.zip`) o carpetas de configuración del entorno de desarrollo local, protegiendo el repositorio de basura técnica.
+* **Documentación de Despliegue (`DEPLOYMENT_NOTES.md`):** Redacción de un documento técnico que describe paso a paso el plan de contingencia (copias de seguridad previas de Divi y Edwiser), el método de inyección de estilos y scripts en los paneles de control de producción, y el método de actualización centralizado de tokens de color corporativos.
+
+---
+
+## 8. Resultados Obtenidos y Conclusiones
+
+Tras el desarrollo de las 60 horas de trabajo práctico, se han alcanzado los siguientes hitos:
+1. **Unificación Visual:** Se logró dotar al ecosistema digital (WordPress y Moodle) de una interfaz moderna bajo la estética Bento Grid y Glassmorphism, sin modificar los archivos estructurales de los CMS.
+2. **Entorno de Aprendizaje Dinámico:** Los prototipos programados en Vanilla JS demostraron una interactividad superior a las diapositivas estáticas utilizadas anteriormente, elevando la retención de conceptos del estudiante.
+3. **Escalabilidad de Diseño:** Con la creación de `h5p-overrides.css`, cualquier docente de la asociación podrá crear nuevas actividades en el editor nativo de H5P y estas adoptarán automáticamente los colores y tipografías corporativas, garantizando la consistencia a largo plazo.
+
+---
+
+## 9. Propuestas de Mejora
+
+A modo de evolución futura para los desarrolladores de la asociación, se proponen las siguientes líneas de trabajo:
+* **Escalabilidad del Sistema de Diseño:** Si bien este proyecto ha establecido con éxito las reglas visuales prioritarias en el motor H5P, la migración integral de todas las páginas de WordPress Divi y el cuadro de mando Edwiser Moodle a esta arquitectura unificada se plantea como una fase futura de integración.
+* **Migración a Web Components:** Encapsular las interacciones de Vanilla JS desarrolladas (como los hotspots o las tarjetas modales) en *Web Components* nativos e independientes para facilitar su reutilización en otros desarrollos futuros de la asociación sin dependencia de plantillas específicas.
