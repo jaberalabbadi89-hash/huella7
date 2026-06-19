@@ -840,6 +840,11 @@ dialog.modal-overlay::backdrop {
     height: 38px;
     transform: translate(-50%, -50%);
     z-index: 10;
+    transition: z-index 0.3s;
+}
+
+.ahc-hotspot--active {
+    z-index: 100;
 }
 
 /* Marker trigger button */
