@@ -76,7 +76,49 @@ const translations = {
         cardInst04: "Instructor: Ing. Khaled Al-Mansouri",
         cardDesc04: "Exploración de fuentes de desperdicio de energía y emisiones en el hogar mediante puntos calientes (Image Hotspots).",
         cardProgLbl04: "Progreso del desarrollo",
-        cardBtn04: "Ver detalles"
+        cardBtn04: "Ver detalles",
+
+        cardTag05: "OA-05 | Alta",
+        cardTitle05: "Mitos y Realidades del Clima",
+        cardInst05: "Instructor: Asociación AHC",
+        cardDesc05: "Juzga si una afirmación común sobre el cambio climático es un mito o una realidad (Verdadero/Falso).",
+        cardProgLbl05: "Progreso del desarrollo",
+        cardBtn05: "Ver ficha",
+
+        cardTag06: "OA-06 | Alta",
+        cardTitle06: "Glosario Climático",
+        cardInst06: "Instructor: Equipo de Desarrollo Técnico",
+        cardDesc06: "Repasa el vocabulario climático básico (Huella, GEI, Neutralidad) girando tarjetas didácticas (Dialog Cards).",
+        cardProgLbl06: "Progreso del desarrollo",
+        cardBtn06: "Ver detalles",
+
+        cardTag07: "OA-07 | Alta",
+        cardTitle07: "Identificación de Energías Renovables",
+        cardInst07: "Instructor: Asociación AHC",
+        cardDesc07: "Identifica las fuentes de energía renovable haciendo clic sobre ellas (Find the Hotspot).",
+        cardProgLbl07: "Progreso del desarrollo",
+        cardBtn07: "Ver ficha",
+
+        cardTag08: "OA-08 | Alta",
+        cardTitle08: "Mitigación vs Adaptación",
+        cardInst08: "Instructor: Dra. Anya Sharma",
+        cardDesc08: "Distingue mitigación de adaptación completando el texto al arrastrar las palabras (Drag the Words).",
+        cardProgLbl08: "Progreso del desarrollo",
+        cardBtn08: "Ver ficha",
+
+        cardTag09: "OA-09 | Alta",
+        cardTitle09: "Beneficios de la Acción Climática",
+        cardInst09: "Instructor: Asociación AHC",
+        cardDesc09: "Consulta los beneficios ambientales, económicos y de salud de la acción climática (Accordion).",
+        cardProgLbl09: "Progreso del desarrollo",
+        cardBtn09: "Ver detalles",
+
+        cardTag10: "OA-10 | Alta",
+        cardTitle10: "Evaluación Final Integrada",
+        cardInst10: "Instructor: Equipo de Desarrollo Técnico",
+        cardDesc10: "Demuestra lo aprendido en la evaluación final integrada de 2 preguntas (Question Set).",
+        cardProgLbl10: "Progreso del desarrollo",
+        cardBtn10: "Ver ficha"
     },
     ca: {
         pageTitle: "Campus AHC - Plataforma d'Aprenentatge Interactiu",
@@ -120,7 +162,49 @@ const translations = {
         cardInst04: "Instructor: Eng. Khaled Al-Mansouri",
         cardDesc04: "Exploració de fonts de malbaratament d'energia i emissions a la llar mitjançant punts calents (Image Hotspots).",
         cardProgLbl04: "Progrés del desenvolupament",
-        cardBtn04: "Veure detalls"
+        cardBtn04: "Veure detalls",
+
+        cardTag05: "OA-05 | Alta",
+        cardTitle05: "Mites i Realitats del Clima",
+        cardInst05: "Instructor: Associació AHC",
+        cardDesc05: "Jutja si una afirmació comuna sobre el canvi climàtic és un mite o una realitat (Vertader/Fals).",
+        cardProgLbl05: "Progrés del desenvolupament",
+        cardBtn05: "Veure fitxa",
+
+        cardTag06: "OA-06 | Alta",
+        cardTitle06: "Glossari Climàtic",
+        cardInst06: "Instructor: Equip de Desenvolupament Tècnic",
+        cardDesc06: "Repassa el vocabulari climàtic bàsic (Petjada, GEH, Neutralitat) girant targetes didàctiques (Dialog Cards).",
+        cardProgLbl06: "Progrés del desenvolupament",
+        cardBtn06: "Veure detalls",
+
+        cardTag07: "OA-07 | Alta",
+        cardTitle07: "Identificació d'Energies Renovables",
+        cardInst07: "Instructor: Associació AHC",
+        cardDesc07: "Identifica les fonts d'energia renovable fent clic sobre elles (Find the Hotspot).",
+        cardProgLbl07: "Progrés del desenvolupament",
+        cardBtn07: "Veure fitxa",
+
+        cardTag08: "OA-08 | Alta",
+        cardTitle08: "Mitigació vs Adaptació",
+        cardInst08: "Instructor: Dra. Anya Sharma",
+        cardDesc08: "Distingeix mitigació d'adaptació completant el text arrossegant les paraules (Drag the Words).",
+        cardProgLbl08: "Progrés del desenvolupament",
+        cardBtn08: "Veure fitxa",
+
+        cardTag09: "OA-09 | Alta",
+        cardTitle09: "Beneficis de l'Acció Climàtica",
+        cardInst09: "Instructor: Associació AHC",
+        cardDesc09: "Consulta els beneficis ambientals, econòmics i de salut de l'acció climàtica (Accordion).",
+        cardProgLbl09: "Progrés del desenvolupament",
+        cardBtn09: "Veure detalls",
+
+        cardTag10: "OA-10 | Alta",
+        cardTitle10: "Avaluació Final Integrada",
+        cardInst10: "Instructor: Equip de Desenvolupament Tècnic",
+        cardDesc10: "Demostra el que has après en l'avaluació final integrada de 2 preguntes (Question Set).",
+        cardProgLbl10: "Progrés del desenvolupament",
+        cardBtn10: "Veure fitxa"
     }
 };
 
@@ -356,6 +440,21 @@ function setLanguage(lang) {
     document.getElementById('card-prog-lbl-04').textContent = t.cardProgLbl04;
     document.getElementById('card-btn-04').textContent = t.cardBtn04;
 
+    // Cards 05–10 (data-driven para evitar 36 líneas repetidas)
+    for (let i = 5; i <= 10; i++) {
+        const n = String(i).padStart(2, '0');
+        const set = (id, key) => {
+            const el = document.getElementById(id);
+            if (el && t[key] !== undefined) el.textContent = t[key];
+        };
+        set(`card-tag-${n}`, `cardTag${n}`);
+        set(`card-title-${n}`, `cardTitle${n}`);
+        set(`card-inst-${n}`, `cardInst${n}`);
+        set(`card-desc-${n}`, `cardDesc${n}`);
+        set(`card-prog-lbl-${n}`, `cardProgLbl${n}`);
+        set(`card-btn-${n}`, `cardBtn${n}`);
+    }
+
     // Render Backlog Table Row Content
     renderBacklogTable(lang);
 }
@@ -509,6 +608,36 @@ const fichasData = {
                     <li><strong>Lavadora:</strong> Calentar agua consume el 90% de la energía de la lavadora. Lava la ropa a 30°C para ahorrar electricidad.</li>
                 </ol>
             `
+        },
+        'OA-05': {
+            code: 'AHC_H5P_TrueFalse_MitosClima_v1.0',
+            title: 'Mitos y Realidades del Clima',
+            type: 'Verdadero / Falso (True/False)'
+        },
+        'OA-06': {
+            code: 'AHC_H5P_DialogCards_Glosario_v1.0',
+            title: 'Glosario Climático',
+            type: 'Tarjetas Didácticas (Dialog Cards)'
+        },
+        'OA-07': {
+            code: 'AHC_H5P_FindHotspot_EnergiasRenovables_v1.0',
+            title: 'Identificación de Energías Renovables',
+            type: 'Encuentra el Punto (Find the Hotspot)'
+        },
+        'OA-08': {
+            code: 'AHC_H5P_DragText_MitigacionAdaptacion_v1.0',
+            title: 'Estrategias: Mitigación vs Adaptación',
+            type: 'Arrastrar las Palabras (Drag the Words)'
+        },
+        'OA-09': {
+            code: 'AHC_H5P_Accordion_BeneficiosClima_v1.0',
+            title: 'Beneficios de la Acción Climática',
+            type: 'Acordeón (Accordion)'
+        },
+        'OA-10': {
+            code: 'AHC_H5P_QuestionSet_EvaluacionFinal_v1.0',
+            title: 'Cuestionario de Evaluación Final',
+            type: 'Batería de Preguntas (Question Set)'
         }
     },
     'ca': {
@@ -634,6 +763,36 @@ const fichasData = {
                     <li><strong>Rentadora:</strong> Escalfar aigua consumeix el 90% de l'energia de la rentadora. Rentar la roba a 30°C per estalviar electricitat.</li>
                 </ol>
             `
+        },
+        'OA-05': {
+            code: 'AHC_H5P_TrueFalse_MitosClima_v1.0',
+            title: 'Mites i Realitats del Clima',
+            type: 'Vertader / Fals (True/False)'
+        },
+        'OA-06': {
+            code: 'AHC_H5P_DialogCards_Glosario_v1.0',
+            title: 'Glossari Climàtic',
+            type: 'Targetes Didàctiques (Dialog Cards)'
+        },
+        'OA-07': {
+            code: 'AHC_H5P_FindHotspot_EnergiasRenovables_v1.0',
+            title: "Identificació d'Energies Renovables",
+            type: 'Troba el Punt (Find the Hotspot)'
+        },
+        'OA-08': {
+            code: 'AHC_H5P_DragText_MitigacionAdaptacion_v1.0',
+            title: 'Estratègies: Mitigació vs Adaptació',
+            type: 'Arrossegar les Paraules (Drag the Words)'
+        },
+        'OA-09': {
+            code: 'AHC_H5P_Accordion_BeneficiosClima_v1.0',
+            title: "Beneficis de l'Acció Climàtica",
+            type: 'Acordió (Accordion)'
+        },
+        'OA-10': {
+            code: 'AHC_H5P_QuestionSet_EvaluacionFinal_v1.0',
+            title: "Qüestionari d'Avaluació Final",
+            type: 'Bateria de Preguntes (Question Set)'
         }
     }
 };
@@ -686,6 +845,7 @@ function viewFicha(oaId) {
                 </div>
             `;
             // Reset state indices
+            activeDialogDeck = dialogCards;
             currentCardIndex = 0;
             updateDialogCardData();
         } else if (oaId === 'OA-02') {
@@ -913,6 +1073,153 @@ function viewFicha(oaId) {
                 </div>
             `;
             initHotspotsInteraction();
+        } else if (oaId === 'OA-05') {
+            // True/False (Verdadero/Falso)
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <div class="ahc-truefalse" id="ahc-truefalse">
+                    <p class="ahc-truefalse__statement">
+                        ${currentLanguage === 'es'
+                            ? 'El cambio climático es un ciclo natural de la Tierra y las emisiones humanas no tienen un impacto significativo en él.'
+                            : 'El canvi climàtic és un cicle natural de la Terra i les emissions humanes no tenen un impacte significatiu en ell.'}
+                    </p>
+                    <div class="ahc-truefalse__options">
+                        <button class="ahc-truefalse__btn" data-val="true" onclick="answerTrueFalse(true, this)">✔ ${currentLanguage === 'es' ? 'Verdadero' : 'Vertader'}</button>
+                        <button class="ahc-truefalse__btn" data-val="false" onclick="answerTrueFalse(false, this)">✘ ${currentLanguage === 'es' ? 'Falso' : 'Fals'}</button>
+                    </div>
+                    <div class="ahc-truefalse__feedback" id="ahc-truefalse-feedback"></div>
+                    <button class="btn-card ahc-truefalse__retry" id="ahc-truefalse-retry" style="display:none;" onclick="resetTrueFalse()">
+                        ${currentLanguage === 'es' ? 'Reintentar' : 'Reintentar'}
+                    </button>
+                </div>
+            `;
+        } else if (oaId === 'OA-06') {
+            // Dialog Cards (Glosario) — reutiliza el componente de OA-01 con otro mazo
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <div class="ahc-dialog-deck">
+                    <div class="ahc-dialog-card">
+                        <div class="ahc-dialog-card__inner" id="ahc-card-inner">
+                            <div class="ahc-dialog-card__front">
+                                <span class="ahc-dialog-card__icon">📖</span>
+                                <div class="ahc-dialog-card__text" id="ahc-card-front-text"></div>
+                                <button class="btn-card ahc-dialog-card__btn-flip" onclick="toggleCardFlip()">
+                                    ${currentLanguage === 'es' ? 'Voltear' : 'Girar'}
+                                </button>
+                            </div>
+                            <div class="ahc-dialog-card__back">
+                                <span class="ahc-dialog-card__icon">✅</span>
+                                <div class="ahc-dialog-card__text" id="ahc-card-back-text"></div>
+                                <button class="btn-card ahc-dialog-card__btn-flip" onclick="toggleCardFlip()">
+                                    ${currentLanguage === 'es' ? 'Volver' : 'Tornar'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ahc-dialog-deck__controls">
+                        <button class="btn-card ahc-dialog-deck__btn" id="ahc-btn-prev" onclick="changeCard(-1)">
+                            ${currentLanguage === 'es' ? 'Anterior' : 'Anterior'}
+                        </button>
+                        <span class="ahc-dialog-deck__progress" id="ahc-deck-progress">1 / 3</span>
+                        <button class="btn-card ahc-dialog-deck__btn" id="ahc-btn-next" onclick="changeCard(1)">
+                            ${currentLanguage === 'es' ? 'Siguiente' : 'Següent'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            activeDialogDeck = glossaryCards;
+            currentCardIndex = 0;
+            updateDialogCardData();
+        } else if (oaId === 'OA-07') {
+            // Find the Hotspot — identifica las renovables
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                    ${currentLanguage === 'es'
+                        ? 'Haz clic en las 4 fuentes de energía renovable. Cuidado con la fuente contaminante.'
+                        : 'Fes clic en les 4 fonts d\'energia renovable. Compte amb la font contaminant.'}
+                </p>
+                <div class="ahc-find__grid" id="ahc-find-grid">
+                    <button class="ahc-find__item" data-correct="true" onclick="findEnergy(this)"><span class="ahc-find__icon">☀️</span><span>${currentLanguage === 'es' ? 'Solar' : 'Solar'}</span></button>
+                    <button class="ahc-find__item" data-correct="true" onclick="findEnergy(this)"><span class="ahc-find__icon">🌬️</span><span>${currentLanguage === 'es' ? 'Eólica' : 'Eòlica'}</span></button>
+                    <button class="ahc-find__item" data-correct="true" onclick="findEnergy(this)"><span class="ahc-find__icon">💧</span><span>${currentLanguage === 'es' ? 'Hidráulica' : 'Hidràulica'}</span></button>
+                    <button class="ahc-find__item" data-correct="true" onclick="findEnergy(this)"><span class="ahc-find__icon">🌋</span><span>${currentLanguage === 'es' ? 'Geotérmica' : 'Geotèrmica'}</span></button>
+                    <button class="ahc-find__item" data-correct="false" onclick="findEnergy(this)"><span class="ahc-find__icon">🏭</span><span>${currentLanguage === 'es' ? 'Carbón' : 'Carbó'}</span></button>
+                </div>
+                <div class="ahc-find__feedback" id="ahc-find-feedback"></div>
+                <div class="ahc-find__actions">
+                    <button class="btn-card" onclick="resetFind()">${currentLanguage === 'es' ? 'Reiniciar' : 'Reiniciar'}</button>
+                    <span class="ahc-find__score" id="ahc-find-score">0 / 4</span>
+                </div>
+            `;
+            findFound = 0;
+        } else if (oaId === 'OA-08') {
+            // Drag the Words (Mitigación vs Adaptación)
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+                    ${currentLanguage === 'es'
+                        ? 'Arrastra las palabras a los huecos correctos para completar el texto.'
+                        : 'Arrossega les paraules als buits correctes per completar el text.'}
+                </p>
+                <div class="ahc-dragwords__bank" id="ahc-dragwords-bank"></div>
+                <p class="ahc-dragwords__text" id="ahc-dragwords-text"></p>
+                <div class="ahc-dragwords__actions">
+                    <button class="btn-card" onclick="resetDragWords()">${currentLanguage === 'es' ? 'Reiniciar' : 'Reiniciar'}</button>
+                    <span class="ahc-dragwords__score" id="ahc-dragwords-score"></span>
+                    <button class="btn-card" onclick="checkDragWords()">${currentLanguage === 'es' ? 'Comprobar' : 'Comprovar'}</button>
+                </div>
+            `;
+            initDragWords();
+        } else if (oaId === 'OA-09') {
+            // Accordion (Beneficios)
+            const A = currentLanguage === 'es' ? {
+                a: ['🌿 Beneficios Ambientales', 'Protegemos la biodiversidad y reducimos la frecuencia de eventos climáticos extremos.'],
+                b: ['💶 Beneficios Económicos', 'La eficiencia energética reduce las facturas de electricidad y fomenta el empleo verde.'],
+                c: ['❤️ Beneficios para la Salud', 'Menos emisiones significan un aire más limpio, reduciendo enfermedades respiratorias.']
+            } : {
+                a: ['🌿 Beneficis Ambientals', 'Protegim la biodiversitat i reduïm la freqüència d\'esdeveniments climàtics extrems.'],
+                b: ['💶 Beneficis Econòmics', 'L\'eficiència energètica redueix les factures d\'electricitat i fomenta l\'ocupació verda.'],
+                c: ['❤️ Beneficis per a la Salut', 'Menys emissions signifiquen un aire més net, reduint malalties respiratòries.']
+            };
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+                    ${currentLanguage === 'es' ? 'Despliega los paneles para descubrir los beneficios.' : 'Desplega els panells per descobrir els beneficis.'}
+                </p>
+                <div class="ahc-accordion" id="ahc-accordion">
+                    ${[A.a, A.b, A.c].map(p => `
+                        <div class="ahc-accordion__item">
+                            <button class="ahc-accordion__header" aria-expanded="false" onclick="toggleAccordion(this)">
+                                <span>${p[0]}</span><span class="ahc-accordion__chevron">▾</span>
+                            </button>
+                            <div class="ahc-accordion__panel"><div class="ahc-accordion__inner">${p[1]}</div></div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        } else if (oaId === 'OA-10') {
+            // Question Set (Evaluación final)
+            modalOaBody.innerHTML = `
+                <p style="margin-bottom: 15px; color: var(--ahc-color-primary-green); font-weight: 700;">
+                    ${currentLanguage === 'es' ? 'Tipo de actividad' : 'Tipus d\'activitat'}: ${data.type}
+                </p>
+                <div class="ahc-quizset" id="ahc-quizset">
+                    <div class="ahc-quizset__progress" id="ahc-quizset-progress"></div>
+                    <div class="ahc-quizset__body" id="ahc-quizset-body"></div>
+                </div>
+            `;
+            initQuizSet();
         } else {
             // Render default technical sheet
             modalOaBody.innerHTML = `
@@ -959,6 +1266,23 @@ const dialogCards = {
     ]
 };
 
+// Mazo del Glosario (OA-06), mismo componente de tarjetas que OA-01
+const glossaryCards = {
+    es: [
+        { q: "Huella de Carbono", a: "La cantidad total de gases de efecto invernadero emitidos directa o indirectamente por un individuo, organización o producto." },
+        { q: "Gases de Efecto Invernadero (GEI)", a: "Gases como el CO2 y el metano que atrapan el calor en la atmósfera, causando el calentamiento global." },
+        { q: "Neutralidad de Carbono (Net Zero)", a: "Estado en el que las emisiones de carbono liberadas a la atmósfera se equilibran con una cantidad equivalente retirada." }
+    ],
+    ca: [
+        { q: "Petjada de Carboni", a: "La quantitat total de gasos d'efecte hivernacle emesos directament o indirectament per un individu, organització o producte." },
+        { q: "Gasos d'Efecte Hivernacle (GEH)", a: "Gasos com el CO2 i el metà que atrapen la calor a l'atmosfera, causant l'escalfament global." },
+        { q: "Neutralitat de Carboni (Net Zero)", a: "Estat en què les emissions de carboni alliberades a l'atmosfera s'equilibren amb una quantitat equivalent retirada." }
+    ]
+};
+
+// Mazo activo (apunta a dialogCards o glossaryCards según el OA abierto)
+let activeDialogDeck = dialogCards;
+
 function toggleCardFlip() {
     const cardInner = document.getElementById('ahc-card-inner');
     if (cardInner) {
@@ -972,11 +1296,11 @@ function changeCard(direction) {
         cardInner.classList.remove('ahc-dialog-card__inner--flipped');
         // Rotate transition duration offset fallback
         setTimeout(() => {
-            currentCardIndex = (currentCardIndex + direction + dialogCards[currentLanguage].length) % dialogCards[currentLanguage].length;
+            currentCardIndex = (currentCardIndex + direction + activeDialogDeck[currentLanguage].length) % activeDialogDeck[currentLanguage].length;
             updateDialogCardData();
         }, 150);
     } else {
-        currentCardIndex = (currentCardIndex + direction + dialogCards[currentLanguage].length) % dialogCards[currentLanguage].length;
+        currentCardIndex = (currentCardIndex + direction + activeDialogDeck[currentLanguage].length) % activeDialogDeck[currentLanguage].length;
         updateDialogCardData();
     }
 }
@@ -987,7 +1311,7 @@ function updateDialogCardData() {
     const progressText = document.getElementById('ahc-deck-progress');
     
     if (frontText && backText && progressText) {
-        const deck = dialogCards[currentLanguage];
+        const deck = activeDialogDeck[currentLanguage];
         const card = deck[currentCardIndex];
         
         frontText.textContent = card.q;
@@ -1439,5 +1763,220 @@ function closeAllHotspotTooltips() {
             marker.setAttribute('aria-expanded', 'false');
         }
     });
+}
+
+// ==========================================================================
+// TRUE / FALSE (OA-05)
+// ==========================================================================
+function answerTrueFalse(chosen) {
+    const correct = false; // la afirmación es un mito → la respuesta correcta es "Falso"
+    const fb = document.getElementById('ahc-truefalse-feedback');
+    const retry = document.getElementById('ahc-truefalse-retry');
+    const btns = document.querySelectorAll('#ahc-truefalse .ahc-truefalse__btn');
+    btns.forEach(b => { b.disabled = true; });
+    const isRight = (chosen === correct);
+    btns.forEach(b => {
+        if (b.getAttribute('data-val') === String(correct)) b.classList.add('ahc-truefalse__btn--correct');
+    });
+    if (!isRight) {
+        btns.forEach(b => { if (b.getAttribute('data-val') === String(chosen)) b.classList.add('ahc-truefalse__btn--incorrect'); });
+    }
+    fb.className = 'ahc-truefalse__feedback ' + (isRight ? 'ahc-truefalse__feedback--ok' : 'ahc-truefalse__feedback--ko');
+    fb.textContent = isRight
+        ? (currentLanguage === 'es' ? '¡Exacto! El ritmo actual de calentamiento es causado directamente por la actividad humana.' : 'Exacte! El ritme actual d\'escalfament és causat directament per l\'activitat humana.')
+        : (currentLanguage === 'es' ? 'Cuidado. Existe un consenso científico absoluto de que el calentamiento global actual es acelerado por nuestras emisiones.' : 'Compte. Hi ha un consens científic absolut que l\'escalfament global actual és accelerat per les nostres emissions.');
+    if (retry) retry.style.display = 'inline-block';
+}
+function resetTrueFalse() {
+    const fb = document.getElementById('ahc-truefalse-feedback');
+    const retry = document.getElementById('ahc-truefalse-retry');
+    document.querySelectorAll('#ahc-truefalse .ahc-truefalse__btn').forEach(b => {
+        b.disabled = false;
+        b.classList.remove('ahc-truefalse__btn--correct', 'ahc-truefalse__btn--incorrect');
+    });
+    if (fb) { fb.textContent = ''; fb.className = 'ahc-truefalse__feedback'; }
+    if (retry) retry.style.display = 'none';
+}
+
+// ==========================================================================
+// FIND THE HOTSPOT (OA-07)
+// ==========================================================================
+let findFound = 0;
+function findEnergy(btn) {
+    if (btn.disabled) return;
+    const correct = btn.getAttribute('data-correct') === 'true';
+    const fb = document.getElementById('ahc-find-feedback');
+    const score = document.getElementById('ahc-find-score');
+    if (correct) {
+        btn.classList.add('ahc-find__item--correct');
+        btn.disabled = true;
+        findFound++;
+        if (score) score.textContent = findFound + ' / 4';
+        if (fb) {
+            fb.className = 'ahc-find__feedback ahc-find__feedback--ok';
+            fb.textContent = (findFound === 4)
+                ? (currentLanguage === 'es' ? '🎉 ¡Has identificado las 4 fuentes renovables!' : '🎉 Has identificat les 4 fonts renovables!')
+                : (currentLanguage === 'es' ? '¡Excelente! Esta energía es clave para reducir nuestra huella de carbono.' : 'Excel·lent! Aquesta energia és clau per reduir la nostra petjada de carboni.');
+        }
+    } else {
+        btn.classList.add('ahc-find__item--incorrect');
+        if (fb) {
+            fb.className = 'ahc-find__feedback ahc-find__feedback--ko';
+            fb.textContent = currentLanguage === 'es' ? 'El carbón es una fuente fósil contaminante, no renovable.' : 'El carbó és una font fòssil contaminant, no renovable.';
+        }
+        setTimeout(() => btn.classList.remove('ahc-find__item--incorrect'), 600);
+    }
+}
+function resetFind() {
+    findFound = 0;
+    document.querySelectorAll('#ahc-find-grid .ahc-find__item').forEach(b => {
+        b.classList.remove('ahc-find__item--correct', 'ahc-find__item--incorrect');
+        b.disabled = false;
+    });
+    const fb = document.getElementById('ahc-find-feedback');
+    if (fb) { fb.textContent = ''; fb.className = 'ahc-find__feedback'; }
+    const score = document.getElementById('ahc-find-score');
+    if (score) score.textContent = '0 / 4';
+}
+
+// ==========================================================================
+// DRAG THE WORDS (OA-08)
+// ==========================================================================
+const dragWordsData = {
+    es: {
+        segments: ['La ', ' se centra en reducir las emisiones de gases de efecto invernadero para evitar que el cambio climático empeore. Por otro lado, la ', ' busca ajustar nuestros sistemas y estilo de vida para enfrentar los impactos climáticos que ya son inevitables. Un ejemplo de mitigación es usar energía ', ', mientras que construir muros contra inundaciones es una medida de ', '.'],
+        answers: ['mitigación', 'adaptación', 'solar', 'adaptación'],
+        bank: ['mitigación', 'adaptación', 'adaptación', 'solar', 'emisiones']
+    },
+    ca: {
+        segments: ['La ', ' es centra en reduir les emissions de gasos d\'efecte hivernacle per evitar que el canvi climàtic empitjori. D\'altra banda, l\'', ' busca ajustar els nostres sistemes i estil de vida per afrontar els impactes climàtics que ja són inevitables. Un exemple de mitigació és usar energia ', ', mentre que construir murs contra inundacions és una mesura d\'', '.'],
+        answers: ['mitigació', 'adaptació', 'solar', 'adaptació'],
+        bank: ['mitigació', 'adaptació', 'adaptació', 'solar', 'emissions']
+    }
+};
+function initDragWords() {
+    const d = dragWordsData[currentLanguage];
+    const bank = document.getElementById('ahc-dragwords-bank');
+    const text = document.getElementById('ahc-dragwords-text');
+    const score = document.getElementById('ahc-dragwords-score');
+    if (!bank || !text) return;
+    if (score) score.textContent = '';
+    let html = '';
+    d.segments.forEach((seg, i) => {
+        html += seg.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+        if (i < d.answers.length) html += `<span class="ahc-dragwords__blank" data-answer="${d.answers[i]}"></span>`;
+    });
+    text.innerHTML = html;
+    bank.innerHTML = '';
+    [...d.bank].map((w, idx) => ({ w, id: 'dw-' + idx })).sort(() => Math.random() - 0.5).forEach(o => {
+        const el = document.createElement('span');
+        el.className = 'ahc-dragword';
+        el.textContent = o.w;
+        el.id = o.id;
+        el.draggable = true;
+        el.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', o.id); el.classList.add('ahc-dragword--dragging'); });
+        el.addEventListener('dragend', () => el.classList.remove('ahc-dragword--dragging'));
+        bank.appendChild(el);
+    });
+    const zones = [...document.querySelectorAll('#ahc-dragwords-text .ahc-dragwords__blank'), bank];
+    zones.forEach(z => {
+        z.addEventListener('dragover', e => { e.preventDefault(); z.classList.add('ahc-dragwords__blank--over'); });
+        z.addEventListener('dragleave', () => z.classList.remove('ahc-dragwords__blank--over'));
+        z.addEventListener('drop', e => {
+            e.preventDefault();
+            z.classList.remove('ahc-dragwords__blank--over');
+            const word = document.getElementById(e.dataTransfer.getData('text/plain'));
+            if (!word) return;
+            if (z.classList.contains('ahc-dragwords__blank') && z.firstChild) bank.appendChild(z.firstChild);
+            z.appendChild(word);
+            word.classList.remove('ahc-dragword--correct', 'ahc-dragword--incorrect');
+        });
+    });
+}
+function checkDragWords() {
+    const d = dragWordsData[currentLanguage];
+    let correct = 0;
+    document.querySelectorAll('#ahc-dragwords-text .ahc-dragwords__blank').forEach(blank => {
+        const word = blank.querySelector('.ahc-dragword');
+        if (word && word.textContent.trim() === blank.getAttribute('data-answer')) {
+            correct++; word.classList.add('ahc-dragword--correct'); word.classList.remove('ahc-dragword--incorrect');
+        } else if (word) {
+            word.classList.add('ahc-dragword--incorrect'); word.classList.remove('ahc-dragword--correct');
+        }
+    });
+    const score = document.getElementById('ahc-dragwords-score');
+    if (score) score.textContent = (currentLanguage === 'es' ? 'Puntuación' : 'Puntuació') + ': ' + correct + ' / ' + d.answers.length;
+}
+function resetDragWords() { initDragWords(); }
+
+// ==========================================================================
+// ACCORDION (OA-09)
+// ==========================================================================
+function toggleAccordion(header) {
+    const item = header.closest('.ahc-accordion__item');
+    const open = item.classList.toggle('ahc-accordion__item--open');
+    header.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+// ==========================================================================
+// QUESTION SET (OA-10)
+// ==========================================================================
+let quizState = { idx: 0, score: 0, questions: [] };
+function getQuizQuestions() {
+    return currentLanguage === 'es' ? [
+        { q: '¿Cuál de estos sectores genera más emisiones a nivel global?', options: ['Energía', 'Moda', 'Agricultura'], correct: 0 },
+        { q: 'Plantar árboles es la única solución para frenar el cambio climático.', options: ['Verdadero', 'Falso'], correct: 1 }
+    ] : [
+        { q: 'Quin d\'aquests sectors genera més emissions a nivell global?', options: ['Energia', 'Moda', 'Agricultura'], correct: 0 },
+        { q: 'Plantar arbres és l\'única solució per frenar el canvi climàtic.', options: ['Vertader', 'Fals'], correct: 1 }
+    ];
+}
+function initQuizSet() {
+    quizState = { idx: 0, score: 0, questions: getQuizQuestions() };
+    renderQuizQuestion();
+}
+function renderQuizQuestion() {
+    const body = document.getElementById('ahc-quizset-body');
+    const prog = document.getElementById('ahc-quizset-progress');
+    if (!body) return;
+    const q = quizState.questions[quizState.idx];
+    if (prog) prog.textContent = (currentLanguage === 'es' ? 'Pregunta' : 'Pregunta') + ' ' + (quizState.idx + 1) + ' / ' + quizState.questions.length;
+    body.innerHTML = `
+        <div class="ahc-quizset__question">${q.q}</div>
+        <div class="ahc-quizset__options">
+            ${q.options.map((opt, i) => `<button class="ahc-quizset__opt" onclick="answerQuiz(${i})">${opt}</button>`).join('')}
+        </div>
+    `;
+}
+function answerQuiz(i) {
+    const q = quizState.questions[quizState.idx];
+    const opts = document.querySelectorAll('#ahc-quizset-body .ahc-quizset__opt');
+    opts.forEach(o => { o.disabled = true; });
+    const right = (i === q.correct);
+    if (right) quizState.score++;
+    opts[i].classList.add(right ? 'ahc-quizset__opt--correct' : 'ahc-quizset__opt--incorrect');
+    if (!right && opts[q.correct]) opts[q.correct].classList.add('ahc-quizset__opt--correct');
+    setTimeout(() => {
+        quizState.idx++;
+        if (quizState.idx < quizState.questions.length) renderQuizQuestion();
+        else renderQuizResult();
+    }, 950);
+}
+function renderQuizResult() {
+    const body = document.getElementById('ahc-quizset-body');
+    const prog = document.getElementById('ahc-quizset-progress');
+    const total = quizState.questions.length;
+    const pass = quizState.score >= Math.ceil(total / 2);
+    if (prog) prog.textContent = currentLanguage === 'es' ? 'Resultado' : 'Resultat';
+    body.innerHTML = `
+        <div class="ahc-quizset__result ${pass ? 'ahc-quizset__result--pass' : 'ahc-quizset__result--fail'}">
+            <div class="ahc-quizset__result-icon">${pass ? '🏆' : '🔁'}</div>
+            <div class="ahc-quizset__result-score">${quizState.score} / ${total}</div>
+            <div class="ahc-quizset__result-msg">${pass
+                ? (currentLanguage === 'es' ? '¡Aprobado! Has superado la evaluación final.' : 'Aprovat! Has superat l\'avaluació final.')
+                : (currentLanguage === 'es' ? 'Necesitas al menos el 50%. ¡Inténtalo de nuevo!' : 'Necessites almenys el 50%. Torna-ho a provar!')}</div>
+            <button class="btn-card" onclick="initQuizSet()">${currentLanguage === 'es' ? 'Reintentar' : 'Reintentar'}</button>
+        </div>
+    `;
 }
 
