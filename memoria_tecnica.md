@@ -44,7 +44,7 @@ El desarrollo técnico se ha ejecutado estrictamente bajo el estándar de desarr
 La arquitectura del proyecto está diseñada de forma modular y desacoplada, facilitando una inyección por fases que previene conflictos en el DOM y reduce la carga del servidor. La estructura de archivos del prototipo se compone de:
 
 * **`index.html`:** Documento contenedor principal que actúa como portal de aprendizaje interactivo.
-* **`custom-style.css`:** Contiene los tokens de diseño de la marca (colores oficiales como el verde `#62a144`, tipografías corporativas, etc.), las reglas estructurales de la Bento Box y los estilos específicos de cada objeto de aprendizaje.
+* **`custom-style.css`:** Contiene los tokens de diseño de la marca (colores oficiales como el verde `#4F9447`, tipografías corporativas, etc.), las reglas estructurales de la Bento Box y los estilos específicos de cada objeto de aprendizaje.
 * **`script.js`:** Núcleo de la lógica interactiva. Controla el lanzamiento de las modales y el ciclo de vida de los datos de cada actividad (volteo de tarjetas, zonas de drop, sistema de penalización temporal en video y control selectivo de tooltips).
 * **`custom-interactions.js`:** Archivo aislado que ejecuta una instancia de `Intersection Observer` para aplicar animaciones de entrada (`ahc-reveal`) a los elementos de la interfaz solo cuando entran en el viewport del navegador, optimizando el uso de CPU.
 * **`h5p-overrides.css`:** Hoja de estilos externa para inyectar sobre los iframes nativos de H5P. Este archivo aplica selectores de alta especificidad (ej. `.h5p-joubelui-button`) para redefinir el color de los botones del sistema de H5P al verde de la asociación, redondear esquinas y unificar el muelle visual de los diálogos interactivos, todo de manera aislada y sin interferir con las hojas de estilo nativas de Moodle (Edwiser).
@@ -64,7 +64,7 @@ Se han programado funcionalmente cuatro componentes interactivos basados en espe
 Se ha prestado especial atención al cumplimiento de las pautas WCAG 2.1:
 * **Navegación Teclado:** Todos los marcadores y botones interactivos utilizan la etiqueta semántica `<button>` permitiendo el enfoque mediante la tecla Tabulador y el disparo mediante la barra espaciadora o Enter.
 * **Semántica y Atributos Aria:** Se implementaron los atributos `aria-expanded` en tooltips y marcadores, `aria-label` descriptivos de los iconos embebidos, y textos `alt` detallados en las imágenes del plano estructural del hogar.
-* **Contraste de Color:** La paleta de colores empleada (incluyendo el verde `#62a144` y los avisos de error) cumple con la tasa de contraste mínimo de 4.5:1 exigido para textos de lectura.
+* **Contraste de Color:** La paleta de colores empleada (incluyendo el verde `#4F9447` y los avisos de error) cumple con la tasa de contraste mínimo de 4.5:1 exigido para textos de lectura.
 
 ---
 

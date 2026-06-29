@@ -1,0 +1,47 @@
+# Catálogo de la Biblioteca H5P — Asociación Huella de Carbono (AHC)
+
+Catálogo de los **Objetos de Aprendizaje (OA) entregados**, reconstruido para que **coincida con el
+contenido real** de cada paquete `.h5p` (tipo H5P, título y evidencia verificados abriendo cada paquete).
+
+- **Estado de la biblioteca**: 10 OA terminados y empaquetados, válidos técnicamente, con ficha de 8 bloques.
+- **Licencia de todos los OA**: Creative Commons **CC BY-NC-SA 4.0**.
+- **Versión**: todos en `v1.0.0`.
+
+## Tabla de OA
+
+| Código | Título real | Tipo H5P real | Tema | Nivel | Curso destino | Público | Verbo (Bloom) | Evidencia observable | Dur. |
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+| **OA-01** | Conceptos Climáticos Básicos | Dialog Cards (`H5P.Dialogcards`) | Conceptos climáticos (CO2e, Net Zero) | Básico | Huella de Carbono Personal | Ciudadanía | Recordar / Comprender | Gira 3 tarjetas y reconoce CO2e, Net Zero y Huella de Carbono | 3–5 min |
+| **OA-02** | Alcances de Emisiones (1, 2 y 3) | Drag and Drop (`H5P.DragQuestion`) | Medición y reducción de emisiones | Intermedio | Huella de Carbono Organización | Empresas y voluntariado | Clasificar | Clasifica 6 fuentes de emisión en su alcance correcto | 5–7 min |
+| **OA-03** | Conceptos Clave de Sostenibilidad | Fill in the Blanks (`H5P.Blanks`) | Sostenibilidad | Básico | Sostenibilidad | Ciudadanía | Comprender / Aplicar | Completa 3 términos clave (carbono, invernadero, neutralidad) | 3–5 min |
+| **OA-04** | Emisiones ocultas en el hogar | Image Hotspots (`H5P.ImageHotspots`) | Huella de carbono personal | Intermedio | Huella de Carbono Personal | Ciudadanía | Explorar / Identificar | Abre los 5 hotspots de emisión del plano del hogar | 3–5 min |
+| **OA-05** | Mitos y realidades del clima | True/False (`H5P.TrueFalse`) | Educación climática | Básico | Educación Climática | Ciudadanía | Discriminar / Juzgar | Juzga si un mito climático es verdadero o falso | 1–3 min |
+| **OA-06** | Glosario Climático | Dialog Cards (`H5P.Dialogcards`) | Vocabulario climático | Básico | Huella de Carbono Personal | Todos los perfiles | Recordar | Repasa el glosario (Huella, GEI, Neutralidad) girando 3 tarjetas | 3–5 min |
+| **OA-07** | Identificación de energías renovables | Find the Hotspot (`H5P.ImageHotspotQuestion`) | Energía sostenible | Intermedio | Energía Sostenible | Ciudadanía | Identificar | Localiza las fuentes renovables correctas (4 correctas / 1 distractor) | 3–5 min |
+| **OA-08** | Estrategias de Acción Climática (Mitigación vs Adaptación) | Drag the Words (`H5P.DragText`) | Estrategia climática | Intermedio | Estrategia Climática | Ciudadanía y empresas | Aplicar / Distinguir | Completa 4 huecos distinguiendo mitigación de adaptación | 3–5 min |
+| **OA-09** | Beneficios de la Acción Climática | Accordion (`H5P.Accordion`) | Acción climática | Básico | Acción Climática | Todos los perfiles | Consultar / Comprender | Despliega 3 paneles (ambiental, económico, salud) | 3–5 min |
+| **OA-10** | Cuestionario de Evaluación Final | Question Set (`H5P.QuestionSet`) | Evaluación integrada | Intermedio | Embajador Climático | Embajadores y participantes | Evaluar | Responde la batería final y alcanza ≥50 % | 3–5 min |
+
+> Cada fila enlaza con su ficha completa de 8 bloques en `02_Fichas_OA/OA-XX_Ficha.md` y su paquete en
+> `03_H5P_exportables/AHC_H5P_..._v1.0.0.h5p`.
+
+## Cobertura de tipos H5P
+
+**9 tipos distintos** sobre 10 OA (Dialog Cards se usa en OA-01 y OA-06):
+
+| Familia (plan §5) | Tipos cubiertos |
+|:--|:--|
+| Explicación | Dialog Cards, Accordion |
+| Práctica | Drag and Drop, Fill in the Blanks, Image Hotspots, Drag the Words, Find the Hotspot |
+| Evaluación | True/False, Question Set |
+| Gamificación | — *(sin cubrir)* |
+
+> ⚠️ **Gap respecto al plan (§1)**: el plan recomienda un catálogo de **mínimo 10 tipos** cubriendo también
+> **gamificación**. Aquí hay 9 tipos distintos (uno repetido) y la categoría *gamificación* (p. ej. Memory
+> Game, Branching Scenario) queda sin cubrir. Cerrar este gap requiere **producir 1+ OA adicional de un tipo
+> nuevo en un editor H5P** (Moodle/Lumi); no puede generarse fuera de un entorno de autoría H5P.
+
+## Coherencia verbo–formato (plan §5)
+Todos los OA cumplen la regla "el formato se elige porque permite recoger la evidencia":
+clasificar→Drag&Drop, identificar→Hotspots/Find the Hotspot, recordar→Dialog Cards, comprender→Fill in the
+Blanks/Accordion, discriminar→True/False, aplicar→Drag the Words, evaluar→Question Set.

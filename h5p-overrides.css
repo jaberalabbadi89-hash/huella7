@@ -9,7 +9,7 @@
     background-color: transparent !important; 
     border: none !important;
     box-shadow: none !important;
-    font-family: 'Outfit', 'Inter', 'Cairo', Arial, sans-serif !important;
+    font-family: 'Nunito Sans', 'Source Sans 3', Arial, sans-serif !important;
 }
 
 /* 2. Joubel UI Buttons (Universal Check / Retry / Next / CTA Buttons) */
@@ -20,14 +20,14 @@
 .h5p-interactive-video-cta-button,
 .h5p-video-action-button,
 .h5p-joubelui-score-bar-button {
-    background: #62a144 !important;
+    background: #4F9447 !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 8px !important;
     font-weight: 700 !important;
     font-size: 0.9rem !important;
     padding: 8px 18px !important;
-    box-shadow: 0 4px 6px rgba(98, 161, 68, 0.15) !important;
+    box-shadow: 0 4px 6px rgba(79, 148, 71, 0.15) !important;
     text-shadow: none !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     cursor: pointer !important;
@@ -40,8 +40,8 @@
 .h5p-interactive-video-cta-button:hover,
 .h5p-video-action-button:hover,
 .h5p-joubelui-score-bar-button:hover {
-    background: #4d8235 !important;
-    box-shadow: 0 6px 15px rgba(98, 161, 68, 0.3) !important;
+    background: #2F6D36 !important;
+    box-shadow: 0 6px 15px rgba(79, 148, 71, 0.3) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -52,19 +52,19 @@
 
 /* 3. Dialog Cards Styles Customization */
 .h5p-dialogcards .h5p-card-wrapper {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f7ed 100%) !important;
-    border: 1px solid rgba(98, 161, 68, 0.2) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #EAF1E6 100%) !important;
+    border: 1px solid rgba(79, 148, 71, 0.2) !important;
     border-radius: 16px !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04) !important;
 }
 
 .h5p-dialogcards .h5p-card-turn-button {
-    background: #62a144 !important;
+    background: #4F9447 !important;
     color: #ffffff !important;
     border-radius: 8px !important;
 }
 .h5p-dialogcards .h5p-card-turn-button:hover {
-    background: #4d8235 !important;
+    background: #2F6D36 !important;
 }
 
 /* 4. Drag & Drop Customization */
@@ -77,22 +77,22 @@
 
 .h5p-drag-and-drop .h5p-dropzone-correct,
 .h5p-drag-and-drop .h5p-draggable-correct {
-    border-color: #62a144 !important;
-    background-color: #f0f7ed !important;
-    color: #4d8235 !important;
+    border-color: #4F9447 !important;
+    background-color: #EAF1E6 !important;
+    color: #2F6D36 !important;
 }
 
 .h5p-drag-and-drop .h5p-dropzone-incorrect,
 .h5p-drag-and-drop .h5p-draggable-incorrect {
-    border-color: #cf2e2e !important;
-    background-color: rgba(207, 46, 46, 0.06) !important;
-    color: #cf2e2e !important;
+    border-color: #9B4D39 !important;
+    background-color: rgba(155, 77, 57, 0.06) !important;
+    color: #9B4D39 !important;
 }
 
 /* 5. Video Player Elements & Timelines */
 .h5p-video-play-button, 
 .h5p-video-control.h5p-play {
-    color: #62a144 !important;
+    color: #4F9447 !important;
 }
 
 .h5p-interactive-video .h5p-control-bar {
@@ -100,38 +100,38 @@
 }
 
 .h5p-interactive-video .h5p-slider-playbar {
-    background: #62a144 !important;
+    background: #4F9447 !important;
 }
 
 .h5p-interactive-video .h5p-slider-handle {
     background: #ffffff !important;
-    border: 2px solid #62a144 !important;
+    border: 2px solid #4F9447 !important;
 }
 
 /* 6. Image Hotspots Icons & Pulsing Effects */
 .h5p-image-hotspot-button {
-    background-color: #62a144 !important;
+    background-color: #4F9447 !important;
     border: 2px solid #ffffff !important;
-    box-shadow: 0 4px 10px rgba(98, 161, 68, 0.4) !important;
+    box-shadow: 0 4px 10px rgba(79, 148, 71, 0.4) !important;
 }
 
 .h5p-image-hotspot-button:hover {
-    background-color: #4d8235 !important;
+    background-color: #2F6D36 !important;
 }
 
 .h5p-image-hotspots-container .h5p-image-hotspot-popup {
     background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    border: 1px solid rgba(98, 161, 68, 0.2) !important;
+    border: 1px solid rgba(79, 148, 71, 0.2) !important;
     border-radius: 12px !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* 7. Message Box / Feedback Elements */
 .h5p-joubelui-message-box {
-    background-color: #f0f7ed !important;
-    border-left: 4px solid #62a144 !important;
-    color: #1e293b !important;
+    background-color: #EAF1E6 !important;
+    border-left: 4px solid #4F9447 !important;
+    color: #222A1A !important;
     border-radius: 0 8px 8px 0 !important;
 }

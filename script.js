@@ -124,28 +124,30 @@ const translations = {
     }
 };
 
+// Estado real de la Biblioteca H5P AHC (proyecto 6): 10 OA terminados y
+// empaquetados (v1.0.0, CC BY-NC-SA 4.0). Fuente: 01_Catalogo_general/Catalogo_H5P.md.
 const backlogData = [
     {
         code: "OA-01",
         h5p: "Dialog Cards",
         priority: { es: "🔴 Alta", ca: "🔴 Alta" },
-        status: { es: "⏳ En espera", ca: "⏳ En espera" },
-        class: "status-pending",
-        rowClass: "",
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
         topic: {
             es: "Conceptos Climáticos (CO2e, Net Zero)",
             ca: "Conceptes Climàtics (CO2e, Net Zero)"
         },
         goal: {
-            es: "Recordar conceptos básicos",
-            ca: "Recordar conceptes bàsics"
+            es: "Recordar 3 conceptos clave",
+            ca: "Recordar 3 conceptes clau"
         }
     },
     {
         code: "OA-02",
         h5p: "Drag and Drop",
         priority: { es: "🔴 Alta", ca: "🔴 Alta" },
-        status: { es: "📝 Ficha lista", ca: "📝 Fitxa enllestida" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
         class: "status-ready",
         rowClass: "highlight-row",
         topic: {
@@ -153,88 +155,136 @@ const backlogData = [
             ca: "Abasts d'Emissions (1, 2, 3)"
         },
         goal: {
-            es: "Clasificar fuentes de emisiones",
-            ca: "Classificar fonts d'emissions"
+            es: "Clasificar 6 fuentes por alcance",
+            ca: "Classificar 6 fonts per abast"
         }
     },
     {
         code: "OA-03",
-        h5p: "Interactive Video",
+        h5p: "Fill in the Blanks",
         priority: { es: "🔴 Alta", ca: "🔴 Alta" },
-        status: { es: "📝 Ficha lista", ca: "📝 Fitxa enllestida" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
         class: "status-ready",
         rowClass: "highlight-row",
         topic: {
-            es: "Calculadora de Huella de Carbono",
-            ca: "Calculadora de Petjada de Carboni"
+            es: "Conceptos de Sostenibilidad",
+            ca: "Conceptes de Sostenibilitat"
         },
         goal: {
-            es: "Aplicar pasos de la calculadora",
-            ca: "Aplicar passos de la calculadora"
+            es: "Completar 3 términos clave",
+            ca: "Completar 3 termes clau"
         }
     },
     {
         code: "OA-04",
         h5p: "Image Hotspots",
         priority: { es: "🔴 Alta", ca: "🔴 Alta" },
-        status: { es: "⏳ En espera", ca: "⏳ En espera" },
-        class: "status-pending",
-        rowClass: "",
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
         topic: {
             es: "Emisiones Ocultas en el Hogar",
             ca: "Emissions Ocultes a la Llar"
         },
         goal: {
-            es: "Explorar desperdicios de energía",
-            ca: "Explorar malbarataments d'energia"
+            es: "Explorar 5 focos de emisión",
+            ca: "Explorar 5 focus d'emissió"
         }
     },
     {
         code: "OA-05",
-        h5p: "Course Presentation",
+        h5p: "True/False",
         priority: { es: "🔴 Alta", ca: "🔴 Alta" },
-        status: { es: "⏳ En espera", ca: "⏳ En espera" },
-        class: "status-pending",
-        rowClass: "",
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
         topic: {
-            es: "Huella Personal en 5 Decisiones",
-            ca: "Petjada Personal en 5 Decisions"
+            es: "Mitos y Realidades del Clima",
+            ca: "Mites i Realitats del Clima"
         },
         goal: {
-            es: "Comprender impacto diario",
-            ca: "Comprendre impacte diari"
+            es: "Discriminar mito de realidad",
+            ca: "Discriminar mite de realitat"
         }
     },
     {
         code: "OA-06",
-        h5p: "Fill in the Blanks",
-        priority: { es: "🟡 Media", ca: "🟡 Mitjana" },
-        status: { es: "⏳ En espera", ca: "⏳ En espera" },
-        class: "status-pending",
-        rowClass: "",
+        h5p: "Dialog Cards",
+        priority: { es: "🔴 Alta", ca: "🔴 Alta" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
         topic: {
-            es: "Neutralidad de Carbono",
-            ca: "Neutralitat de Carboni"
+            es: "Glosario Climático",
+            ca: "Glossari Climàtic"
         },
         goal: {
-            es: "Recuperar la definición correcta",
-            ca: "Recuperar la definició correcta"
+            es: "Repasar el glosario (Huella, GEI)",
+            ca: "Repassar el glossari (Petjada, GEH)"
         }
     },
     {
         code: "OA-07",
-        h5p: "Multiple Choice",
-        priority: { es: "🟡 Media", ca: "🟡 Mitjana" },
-        status: { es: "⏳ En espera", ca: "⏳ En espera" },
-        class: "status-pending",
-        rowClass: "",
+        h5p: "Find the Hotspot",
+        priority: { es: "🔴 Alta", ca: "🔴 Alta" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
         topic: {
-            es: "Fuentes Globales de Emisiones",
-            ca: "Fonts Globals d'Emissions"
+            es: "Energías Renovables",
+            ca: "Energies Renovables"
         },
         goal: {
-            es: "Identificar sectores más contaminantes",
-            ca: "Identificar sectors més contaminants"
+            es: "Identificar fuentes renovables",
+            ca: "Identificar fonts renovables"
+        }
+    },
+    {
+        code: "OA-08",
+        h5p: "Drag the Words",
+        priority: { es: "🔴 Alta", ca: "🔴 Alta" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
+        topic: {
+            es: "Mitigación vs Adaptación",
+            ca: "Mitigació vs Adaptació"
+        },
+        goal: {
+            es: "Distinguir mitigación de adaptación",
+            ca: "Distingir mitigació d'adaptació"
+        }
+    },
+    {
+        code: "OA-09",
+        h5p: "Accordion",
+        priority: { es: "🔴 Alta", ca: "🔴 Alta" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
+        topic: {
+            es: "Beneficios de la Acción Climática",
+            ca: "Beneficis de l'Acció Climàtica"
+        },
+        goal: {
+            es: "Consultar 3 beneficios clave",
+            ca: "Consultar 3 beneficis clau"
+        }
+    },
+    {
+        code: "OA-10",
+        h5p: "Question Set",
+        priority: { es: "🔴 Alta", ca: "🔴 Alta" },
+        status: { es: "✅ Terminado", ca: "✅ Acabat" },
+        class: "status-ready",
+        rowClass: "highlight-row",
+        topic: {
+            es: "Evaluación Final Integrada",
+            ca: "Avaluació Final Integrada"
+        },
+        goal: {
+            es: "Evaluar (cuestionario final ≥50%)",
+            ca: "Avaluar (qüestionari final ≥50%)"
         }
     }
 ];
@@ -245,10 +295,14 @@ const backlogData = [
 function setLanguage(lang) {
     currentLanguage = lang;
     
-    // Toggle active buttons
-    document.getElementById('btn-lang-es').classList.toggle('active', lang === 'es');
-    document.getElementById('btn-lang-ca').classList.toggle('active', lang === 'ca');
-    
+    // Toggle active buttons + sync accessible pressed state
+    const btnEs = document.getElementById('btn-lang-es');
+    const btnCa = document.getElementById('btn-lang-ca');
+    btnEs.classList.toggle('active', lang === 'es');
+    btnCa.classList.toggle('active', lang === 'ca');
+    btnEs.setAttribute('aria-pressed', String(lang === 'es'));
+    btnCa.setAttribute('aria-pressed', String(lang === 'ca'));
+
     // Update HTML attributes
     document.documentElement.setAttribute('lang', lang);
     
@@ -757,7 +811,7 @@ function viewFicha(oaId) {
                 
                 <div class="ahc-hotspots" id="ahc-hotspots-component">
                     <div class="ahc-hotspots__container">
-                        <img src="house_layout.png" alt="Plano de la casa" class="ahc-hotspots__image">
+                        <img src="house_layout.png?v=10" alt="Plano interactivo de la casa" class="ahc-hotspots__image">
                         
                         <!-- Hotspot 1: Nevera (Kitchen, bottom left) -->
                         <div class="ahc-hotspot" style="top: 65%; left: 22%;" id="hotspot-nevera">

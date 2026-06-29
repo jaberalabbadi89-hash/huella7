@@ -1,25 +1,26 @@
 /* Brand Identity & Design Tokens (Inspired by Asociación Huella de Carbono - AHC) */
 :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --text-primary: #222222;
-    --text-secondary: #666666;
-    --accent-green: #62a144; /* Official AHC Green */
-    --accent-green-hover: #4d8235; /* Darker Green for interactions */
-    --accent-green-light: #f0f7ed; /* Light green tint for backgrounds */
-    
-    --tag-high: #cf2e2e; /* Vivid Red from AHC presets */
-    --tag-medium: #ff6900; /* Luminous Vivid Orange from AHC presets */
-    --tag-low: #62a144; /* Clean AHC Green */
-    
-    --border-color: #f2f2f2;
-    --border-card: #e5e7eb;
+    --bg-primary: #ffffff;            /* tarjeta/superficie (EcoGestos --card) */
+    --bg-secondary: #F4F1E9;          /* fondo crema (EcoGestos --paper) */
+    --text-primary: #222A1A;          /* tinta (EcoGestos --ink) */
+    --text-secondary: #65705C;        /* texto apagado (EcoGestos muted) */
+    --accent-green: #4F9447; /* Verde de marca AHC oficial */
+    --accent-green-hover: #2F6D36; /* Verde de acción EcoGestos (--green-dark) */
+    --accent-green-light: #EAF1E6; /* Tinte verde claro EcoGestos */
+
+    --tag-high: #9B4D39; /* Acento óxido EcoGestos (--rust) */
+    --tag-medium: #C9893F; /* Acento ocre EcoGestos (--ochre) */
+    --tag-low: #4F9447; /* Verde de marca AHC */
+
+    --border-color: #E1D7C0;          /* borde cálido EcoGestos (--border) */
+    --border-card: #E1D7C0;           /* borde cálido EcoGestos (--border) */
     --card-bg: #ffffff;
     --shadow-natural: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 10px 30px rgba(98, 161, 68, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
-    
-    /* Typography from AHC website stylesheet */
-    --font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --shadow-hover: 0 10px 30px rgba(79, 148, 71, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    /* Tipografía AHC (homogeneizada con EcoGestos): Source Sans 3 para títulos, Nunito Sans para cuerpo */
+    --font-heading: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-ar: "Cairo", sans-serif;
 }
 
@@ -34,9 +35,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Al saltar a #dashboard / #backlog, deja hueco bajo la cabecera fija
+   (si no, el título queda oculto debajo del header). */
+[id="dashboard"],
+[id="backlog"] {
+    scroll-margin-top: 130px;
+}
+
 body {
     background-color: var(--bg-primary);
-    background-image: linear-gradient(180deg, rgba(240, 242, 246, 0.5) 0%, rgba(255, 255, 255, 1) 100%);
+    background-image: linear-gradient(180deg, rgba(244, 241, 233, 0.6) 0%, rgba(255, 255, 255, 1) 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-family), var(--font-ar), sans-serif;
@@ -112,7 +120,7 @@ body {
 .lang-switcher {
     display: flex;
     gap: 4px;
-    background: #f1f5f9;
+    background: var(--bg-secondary);
     padding: 4px;
     border-radius: 8px;
     border: 1px solid var(--border-card);
@@ -137,7 +145,7 @@ body {
 .lang-btn.active {
     background-color: var(--accent-green);
     color: #ffffff;
-    box-shadow: 0 2px 5px rgba(98, 161, 68, 0.25);
+    box-shadow: 0 2px 5px rgba(79, 148, 71, 0.25);
 }
 
 /* Main Content Layout */
@@ -151,13 +159,13 @@ body {
 .hero-section {
     text-align: center;
     padding: 40px 20px 30px;
-    background-image: linear-gradient(90deg, rgba(240, 242, 246, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(90deg, rgba(234, 241, 230, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
     border-radius: 12px;
     margin-bottom: 40px;
 }
 
 .hero-title {
-    font-size: 2.6rem;
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
     font-weight: 800;
     margin-bottom: 15px;
     color: var(--text-primary);
@@ -198,13 +206,9 @@ body {
     background-color: var(--accent-green);
 }
 
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-/* AHC Brand Styled Card */
+/* AHC Brand Styled Card
+   La animación de entrada la gestiona un único sistema (.ahc-reveal en
+   custom-style.css). Aquí solo viven los estilos visuales de la tarjeta. */
 .course-card {
     background: var(--card-bg);
     border-radius: 12px;
@@ -214,22 +218,12 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-natural);
-    
-    /* Animation initial states */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* Activated state for JS Observer */
-.course-card.fade-in-up {
-    opacity: 1;
-    transform: translateY(0);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .course-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(98, 161, 68, 0.3);
+    border-color: rgba(79, 148, 71, 0.3);
     box-shadow: var(--shadow-hover);
 }
 
@@ -240,6 +234,10 @@ body {
     width: 100%;
     height: 4px;
     background-color: var(--accent-green);
+    /* Sigue las esquinas redondeadas de la tarjeta: sin "nubs" cuadrados.
+       Sin esto la barra recta asoma fuera del radio en las esquinas. */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 .card-content {
@@ -254,7 +252,7 @@ body {
     height: 55px;
     border-radius: 10px;
     background: var(--accent-green-light);
-    border: 1px solid rgba(98, 161, 68, 0.15);
+    border: 1px solid rgba(79, 148, 71, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,9 +273,9 @@ body {
 }
 
 .tag-high {
-    background: rgba(207, 46, 46, 0.1);
+    background: rgba(155, 77, 57, 0.1);
     color: var(--tag-high);
-    border: 1px solid rgba(207, 46, 46, 0.15);
+    border: 1px solid rgba(155, 77, 57, 0.15);
 }
 
 .card-title {
@@ -317,7 +315,7 @@ body {
 .progress-bar-container {
     width: 100%;
     height: 8px;
-    background: #e2e8f0;
+    background: var(--border-color);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -346,7 +344,7 @@ body {
 .btn-card:hover {
     background-color: var(--accent-green);
     color: #ffffff;
-    box-shadow: 0 4px 10px rgba(98, 161, 68, 0.2);
+    box-shadow: 0 4px 10px rgba(79, 148, 71, 0.2);
 }
 
 /* Backlog Table Section */
@@ -374,13 +372,13 @@ body {
     padding: 15px 20px;
     font-weight: 700;
     color: var(--text-primary);
-    border-bottom: 2px solid #e2e8f0;
-    background-color: #f8fafc;
+    border-bottom: 2px solid var(--border-color);
+    background-color: var(--bg-secondary);
 }
 
 .backlog-table td {
     padding: 15px 20px;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid var(--border-color);
     color: var(--text-secondary);
 }
 
@@ -390,20 +388,20 @@ body {
 
 .backlog-table tr:hover td {
     color: var(--text-primary);
-    background: #f8fafc;
+    background: #F4F1E9;
 }
 
 .highlight-row {
-    background: rgba(98, 161, 68, 0.02);
+    background: rgba(79, 148, 71, 0.02);
 }
 
 .badge-type {
-    background: #f1f5f9;
-    color: #475569;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.8rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
 }
 
 .priority {
@@ -419,15 +417,15 @@ body {
 }
 
 .status-pending {
-    background: rgba(255, 105, 0, 0.08);
+    background: rgba(201, 137, 63, 0.08);
     color: var(--tag-medium);
-    border: 1px solid rgba(255, 105, 0, 0.15);
+    border: 1px solid rgba(201, 137, 63, 0.15);
 }
 
 .status-ready {
-    background: rgba(98, 161, 68, 0.08);
+    background: rgba(79, 148, 71, 0.08);
     color: var(--tag-low);
-    border: 1px solid rgba(98, 161, 68, 0.15);
+    border: 1px solid rgba(79, 148, 71, 0.15);
 }
 
 /* Modal Overlay Styles */
@@ -475,7 +473,7 @@ body {
 .modal-close {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;
     background: transparent;
     border: none;
     color: var(--text-secondary);
@@ -490,14 +488,14 @@ body {
 
 .modal-header {
     margin-bottom: 25px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 15px;
 }
 
 .modal-tag {
     background: var(--accent-green-light);
     color: var(--accent-green);
-    border: 1px solid rgba(98, 161, 68, 0.2);
+    border: 1px solid rgba(79, 148, 71, 0.2);
     font-size: 0.8rem;
     font-weight: 700;
     padding: 4px 12px;
@@ -543,21 +541,15 @@ body {
 .modal-body th,
 .modal-body td {
     padding: 10px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     text-align: start;
     font-size: 0.9rem;
 }
 
 .modal-body th {
-    background: #f8fafc;
+    background: var(--bg-secondary);
     color: var(--text-primary);
 }
 
-/* Feature Support Fallbacks Info */
-@media (prefers-reduced-motion: reduce) {
-    .course-card {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        transition: none !important;
-    }
-}
+/* La animación de entrada y su fallback de reduced-motion viven en
+   custom-style.css (.ahc-reveal), sistema único de revelado. */

@@ -1,43 +1,34 @@
-# قائمة المهام الشاملة للمشروع (H5P Backlog - AHC)
+# Backlog de Objetos de Aprendizaje — Biblioteca H5P AHC
 
-تحتوي هذه القائمة على 20 كائناً تعليمياً (OA) باستخدام 15 نوعاً مختلفاً من أدوات H5P لتغطية مواضيع جمعية البصمة الكربونية (AHC) بطريقة بيداغوجية تفاعلية.
+## ✅ Terminados (10/10 del bloque mínimo del plan)
+| Código | OA | Tipo H5P | Estado |
+|:--|:--|:--|:--|
+| OA-01 | Conceptos Climáticos Básicos | Dialog Cards | Terminado · empaquetado |
+| OA-02 | Alcances de Emisiones (1,2,3) | Drag and Drop | Terminado · empaquetado |
+| OA-03 | Conceptos Clave de Sostenibilidad | Fill in the Blanks | Terminado · empaquetado |
+| OA-04 | Emisiones ocultas en el hogar | Image Hotspots | Terminado · empaquetado |
+| OA-05 | Mitos y realidades del clima | True/False | Terminado · empaquetado |
+| OA-06 | Glosario Climático | Dialog Cards | Terminado · empaquetado |
+| OA-07 | Identificación de energías renovables | Find the Hotspot | Terminado · empaquetado |
+| OA-08 | Estrategias de Acción Climática | Drag the Words | Terminado · empaquetado |
+| OA-09 | Beneficios de la Acción Climática | Accordion | Terminado · empaquetado |
+| OA-10 | Cuestionario de Evaluación Final | Question Set | Terminado · empaquetado |
 
-| الرمز | الموضوع (Tema) | الهدف / الفعل التعليمي (Acción) | نوع H5P المقترح | الأولوية | الحالة |
-| --- | --- | --- | --- | --- | --- |
-| **OA-01** | مصطلحات المناخ (CO2e, Net Zero) | **تذكر** المفاهيم الأساسية | `Dialog Cards` | 🔴 مرتفعة | ✅ منجز (مطور محلياً) |
-| **OA-02** | نطاقات الانبعاثات (1, 2, 3) | **تصنيف** مصادر الانبعاثات | `Drag and Drop` | 🔴 مرتفعة | ✅ منجز (مطور محلياً) |
-| **OA-03** | حاسبة البصمة الكربونية | **تطبيق** خطوات استخدام الحاسبة | `Interactive Video` | 🔴 مرتفعة | ✅ منجز (مطور محلياً) |
-| **OA-04** | الانبعاثات المخفية في المنزل | **استكشاف** مصادر هدر الطاقة | `Image Hotspots` | 🔴 مرتفعة | ✅ منجز (مطور محلياً) |
-| **OA-05** | البصمة الشخصية في 5 قرارات | **فهم** التأثير اليومي للفرد | `Course Presentation` | 🔴 مرتفعة | ⏳ قيد الانتظار |
-| **OA-06** | الحياد الكربوني | **استرجاع** التعريف الصحيح | `Fill in the Blanks` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-07** | المصادر العالمية للانبعاثات | **تحديد** القطاعات الأكثر تلويثاً | `Multiple Choice` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-08** | أنواع الطاقة المتجددة | **مقارنة** بين مصادر الطاقة النظيفة | `Accordion` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-09** | تاريخ الاتفاقيات المناخية | **ترتيب** الأحداث زمنياً (باريس، كيوتو) | `Timeline` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-10** | يوميات صديقة للبيئة | **اتخاذ قرار** في مواقف يومية | `Branching Scenario` | 🔴 مرتفعة | ⏳ قيد الانتظار |
-| **OA-11** | الفرز الصحيح للنفايات | **تحديد** العنصر غير القابل لإعادة التدوير | `Find the Hotspot` | 🔴 مرتفعة | ⏳ قيد الانتظار |
-| **OA-12** | السلوكيات البيئية (EcoGestos) | **ربط** السلوك بأيقونة التأثير البيئي | `Memory Game` | 🟢 منخفضة | ⏳ قيد الانتظار |
-| **OA-13** | خرافات وحقائق حول المناخ | **تقييم** صحة المعلومات الشائعة | `True/False Question` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-14** | ذوبان الأنهار الجليدية | **ملاحظة** التغير البيئي عبر الزمن | `Agamotto` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-15** | ملخص وحدة "النقل المستدام" | **مراجعة** المحتوى عبر نصوص وأسئلة | `Column` | 🟢 منخفضة | ⏳ قيد الانتظار |
-| **OA-16** | قاعدة الـ 3Rs (تقليل، إعادة، تدوير) | **تطابق** التعريفات مع الاستراتيجيات | `Drag Text` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-17** | خطة العمل الشخصية | **صياغة** أهداف مناخية خاصة بالطالب | `Documentation Tool` | 🔴 مرتفعة | ⏳ قيد الانتظار |
-| **OA-18** | ملصقات كفاءة الطاقة للأجهزة | **تمييز** الأجهزة الموفرة للطاقة | `Single Choice Set` | 🟡 متوسطة | ⏳ قيد الانتظار |
-| **OA-19** | دورة حياة المنتج (الاقتصاد الدائري) | **مزاوجة** المادة الخام بالمنتج المعاد تدويره | `Image Pairing` | 🟢 منخفضة | ⏳ قيد الانتظار |
-| **OA-20** | التقييم النهائي للدورة | **اختبار** شامل للمعرفة المكتسبة | `Question Set` | 🔴 مرتفعة | ⏳ قيد الانتظار |
+## 🔜 Pendientes recomendados (para llegar a 20 prototipados y cubrir gamificación)
+Tomados del backlog del plan (§7). Prioridad alta los que aportan un **tipo nuevo**:
 
----
+| OA propuesto | Tipo H5P (nuevo) | Verbo | Curso | Por qué |
+|:--|:--|:--|:--|:--|
+| Empareja EcoGesto–impacto | **Memory Game** | Relacionar | Educación ambiental | Cubre *gamificación* (tipo nuevo) |
+| Primera reunión con una pyme | **Branching Scenario** | Decidir | Embajador Climático | Cubre *gamificación* + toma de decisiones |
+| Huella personal en 5 decisiones | **Course Presentation** | Identificar | Huella Personal | Tipo nuevo (microlección) |
+| Cómo calcular tu huella | **Interactive Video** | Aplicar | Huella Personal | Tipo nuevo (vídeo activo) |
+| Camino de una entidad hacia MITECO | **Timeline** | Ordenar | Registro MITECO | Tipo nuevo (secuenciación) |
+| ¿Qué acción reduce más la huella? | **Multiple Choice** | Comparar | Huella Personal | Tipo nuevo (decisión con feedback) |
+| Ordena el proceso de compostaje | **Image Sequencing** | Ordenar | EcoGestos | Tipo nuevo (secuencia) |
+| ¿Dónde se concentra la huella? | **Chart** | Interpretar | Huella Personal | Tipo nuevo (datos) |
+| FAQ de soporte del Campus | **Accordion** | Consultar | Soporte | Refuerza explicación |
+| Checklist de evento bajo en carbono | **Mark the Words** | Identificar | Eventos sostenibles | Tipo nuevo |
 
-## حالة مهام المشروع الحالية (Sprint Tasks)
-
-### 🔴 المهام المنجزة (Done)
-- [x] تطوير الأنشطة الأربعة الأساسية محلياً (OA-01, OA-02, OA-03, OA-04) باستخدام تقنيات Vanilla JS، Bento Grid، و Glassmorphism.
-- [x] كتابة دليل إعادة استخدام نشاط الفيديو التفاعلي (OA-03_reusability_guide.md).
-- [x] تهيئة مستندات ومسارات الأصول البصرية والمحلية وتأمين الكود في Git.
-
-### 🟡 المهام الحالية (In Progress)
-- [ ] صياغة البطاقات الفنية المتبقية (OA-02_ficha_documental.md, OA-04_ficha_documental.md) باللغات الثلاث (العربية، الإسبانية، والكتالانية).
-- [ ] تجهيز وضبط كود التنسيق النهائي لملف `h5p-overrides.css`.
-
-### 🟢 المهام المتبقية (To Do)
-- [ ] المراجعة النهائية لمعايير سهولة الوصول (A11y / WCAG 2.1).
-- [ ] تسليم المشروع وتسليم دليل التثبيت النهائي (Handoff & Delivery).
+> El plan pide ≥20 OA producidos/prototipados (10 terminados). Con estos 10 pendientes se alcanzaría el
+> objetivo de 20 y se cubrirían los tipos que hoy faltan (gamificación incluida).

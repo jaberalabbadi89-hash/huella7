@@ -34,15 +34,15 @@
 تعتمد جميع الملفات على متغيرات CSS مخصصة (Custom Properties) لتسهيل تعديل الألوان بضغطة زر واحدة. لتغيير اللون الأخضر الرئيسي للجمعية، عدّل فقط القيم التالية في بداية ملف CSS:
 ```css
 :root {
-    --ahc-color-primary-green: #62a144;  /* اللون الأخضر الرئيسي */
-    --ahc-color-green-hover: #4d8235;    /* تأثير التمرير (Hover) */
+    --ahc-color-primary-green: #4F9447;  /* اللون الأخضر الرئيسي */
+    --ahc-color-green-hover: #2F6D36;    /* تأثير التمرير (Hover) */
 }
 ```
 
 ### ب. تعديل الخطوط
 لتعديل الخط العام للمنصة دون تدمير التجاوبية، قم بتغيير المتغيرات المستهدفة أو إعلان الخط الجديد في `body` أو قواعد H5P المستهدفة:
 ```css
-font-family: 'Outfit', 'Inter', 'Cairo', sans-serif !important;
+font-family: 'Nunito Sans', 'Source Sans 3', 'Cairo', sans-serif !important;
 ```
 
 ---
