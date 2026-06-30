@@ -3,10 +3,13 @@
 Catálogo de los **Objetos de Aprendizaje (OA) entregados**, reconstruido para que **coincida con el
 contenido real** de cada paquete `.h5p` (tipo H5P, título y evidencia verificados abriendo cada paquete).
 
-- **Estado de la biblioteca**: **20 OA prototipados** = **10 terminados y empaquetados** (OA-01..10, con
-  ficha de 8 bloques, validados técnicamente) **+ 10 diseñados** (OA-11..20, ficha de diseño completa,
-  pendientes de construcción en editor H5P). Cubre el objetivo del plan (§1): «≥20 OA producidos o
-  prototipados, de los cuales 10 terminados».
+- **Estado de la biblioteca**: **20 OA prototipados** = **10 terminados y validados** (OA-01..10, con ficha
+  de 8 bloques) **+ 5 construidos** (OA-15, OA-16, OA-18, OA-19, OA-20: paquete `.h5p` real generado y
+  **renderizado/verificado** en reproductor H5P, *pendiente de validación del DI y prueba en Moodle*)
+  **+ 5 diseñados** (OA-11, OA-12, OA-13, OA-14, OA-17: ficha de diseño completa, pendientes de
+  construcción — requieren imágenes/vídeo o autoría avanzada en editor H5P). Total con `.h5p` real:
+  **15/20**. Cubre el objetivo del plan (§1): «≥20 OA producidos o prototipados, de los cuales ≥10
+  terminados».
 - **Licencia de todos los OA**: Creative Commons **CC BY-NC-SA 4.0**.
 - **Versión**: terminados en `v1.0.0`; diseñados con versión prevista `v1.0.0`.
 
