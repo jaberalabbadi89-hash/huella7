@@ -3,9 +3,12 @@
 Catálogo de los **Objetos de Aprendizaje (OA) entregados**, reconstruido para que **coincida con el
 contenido real** de cada paquete `.h5p` (tipo H5P, título y evidencia verificados abriendo cada paquete).
 
-- **Estado de la biblioteca**: 10 OA terminados y empaquetados, válidos técnicamente, con ficha de 8 bloques.
+- **Estado de la biblioteca**: **20 OA prototipados** = **10 terminados y empaquetados** (OA-01..10, con
+  ficha de 8 bloques, validados técnicamente) **+ 10 diseñados** (OA-11..20, ficha de diseño completa,
+  pendientes de construcción en editor H5P). Cubre el objetivo del plan (§1): «≥20 OA producidos o
+  prototipados, de los cuales 10 terminados».
 - **Licencia de todos los OA**: Creative Commons **CC BY-NC-SA 4.0**.
-- **Versión**: todos en `v1.0.0`.
+- **Versión**: terminados en `v1.0.0`; diseñados con versión prevista `v1.0.0`.
 
 ## Tabla de OA
 
@@ -27,19 +30,39 @@ contenido real** de cada paquete `.h5p` (tipo H5P, título y evidencia verificad
 
 ## Cobertura de tipos H5P
 
-**9 tipos distintos** sobre 10 OA (Dialog Cards se usa en OA-01 y OA-06):
+**18 tipos H5P distintos** sobre los 20 OA (9 en terminados + 9 nuevos en diseñados; Dialog Cards se usa en
+OA-01 y OA-06, Accordion en OA-09 y OA-19).
 
-| Familia (plan §5) | Tipos cubiertos |
-|:--|:--|
-| Explicación | Dialog Cards, Accordion |
-| Práctica | Drag and Drop, Fill in the Blanks, Image Hotspots, Drag the Words, Find the Hotspot |
-| Evaluación | True/False, Question Set |
-| Gamificación | — *(sin cubrir)* |
+| Familia (plan §5) | Tipos terminados (OA-01..10) | Tipos diseñados (OA-11..20) |
+|:--|:--|:--|
+| Explicación | Dialog Cards, Accordion | Course Presentation |
+| Práctica | Drag and Drop, Fill in the Blanks, Image Hotspots, Drag the Words, Find the Hotspot | Interactive Video, Timeline, Image Sequencing, Chart, Mark the Words |
+| Evaluación | True/False, Question Set | Multiple Choice |
+| **Gamificación** | — | **Memory Game, Branching Scenario** ✅ |
 
-> ⚠️ **Gap respecto al plan (§1)**: el plan recomienda un catálogo de **mínimo 10 tipos** cubriendo también
-> **gamificación**. Aquí hay 9 tipos distintos (uno repetido) y la categoría *gamificación* (p. ej. Memory
-> Game, Branching Scenario) queda sin cubrir. Cerrar este gap requiere **producir 1+ OA adicional de un tipo
-> nuevo en un editor H5P** (Moodle/Lumi); no puede generarse fuera de un entorno de autoría H5P.
+> ✅ **Gap del plan cerrado a nivel de diseño**: el plan (§1) pedía ≥10 tipos cubriendo también
+> *gamificación*. Con los 10 OA diseñados se superan los 10 tipos y se abre la familia **Gamificación**
+> (Memory Game, Branching Scenario). Quedan **terminados** los 10 primeros; los .h5p reales de OA-11..20
+> deben **construirse en un editor H5P** (Moodle «Banco de contenido» o Lumi) — las fichas de diseño
+> (`02_Fichas_OA/OA-11..20_Ficha.md`) dejan cada uno listo para montar y validar por el DI.
+
+## OA diseñados — pendientes de construcción (OA-11..20)
+
+| Código | Título | Tipo H5P | Familia | Verbo | Curso destino |
+|:--|:--|:--|:--|:--|:--|
+| **OA-11** | Empareja el EcoGesto con su impacto | Memory Game | Gamificación | Relacionar | Educación ambiental / EcoGestos |
+| **OA-12** | Primera reunión con una pyme | Branching Scenario | Gamificación | Decidir | Embajador Climático |
+| **OA-13** | Tu huella personal en 5 decisiones | Course Presentation | Explicación | Identificar | Huella de Carbono Personal |
+| **OA-14** | Cómo calcular tu huella de carbono | Interactive Video | Práctica | Aplicar | Huella de Carbono Personal |
+| **OA-15** | El camino de una entidad hacia el registro MITECO | Timeline | Práctica | Ordenar | Registro / MITECO |
+| **OA-16** | Qué acción reduce más tu huella | Multiple Choice | Evaluación | Comparar | Huella de Carbono Personal |
+| **OA-17** | Ordena el proceso de compostaje doméstico | Image Sequencing | Práctica | Ordenar | EcoGestos |
+| **OA-18** | Dónde se concentra tu huella | Chart | Práctica | Interpretar | Huella de Carbono Personal |
+| **OA-19** | FAQ de soporte del Campus AHC | Accordion | Explicación | Consultar | Soporte / Campus |
+| **OA-20** | Checklist de un evento bajo en carbono | Mark the Words | Práctica | Identificar | Eventos sostenibles |
+
+> Cada fila enlaza con su **ficha de diseño** completa en `02_Fichas_OA/OA-XX_Ficha.md` (consigna, ítems,
+> feedback, configuración H5P prevista, accesibilidad y pasos de construcción).
 
 ## Coherencia verbo–formato (plan §5)
 Todos los OA cumplen la regla "el formato se elige porque permite recoger la evidencia":

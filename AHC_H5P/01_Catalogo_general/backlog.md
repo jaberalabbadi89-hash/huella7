@@ -14,21 +14,25 @@
 | OA-09 | Beneficios de la Acción Climática | Accordion | Terminado · empaquetado |
 | OA-10 | Cuestionario de Evaluación Final | Question Set | Terminado · empaquetado |
 
-## 🔜 Pendientes recomendados (para llegar a 20 prototipados y cubrir gamificación)
-Tomados del backlog del plan (§7). Prioridad alta los que aportan un **tipo nuevo**:
+## 🟡 Diseñados — fichas listas, pendientes de construcción (10/10)
+Estos 10 OA ya tienen **ficha de diseño completa** en `02_Fichas_OA/` (consigna, ítems, feedback,
+configuración H5P, accesibilidad y pasos de montaje). Falta solo **construir el `.h5p` en un editor H5P**
+(Moodle «Banco de contenido» o Lumi). Con ellos la biblioteca llega a **20 OA prototipados** (objetivo del
+plan §1) y se **cubre la gamificación**, que faltaba.
 
-| OA propuesto | Tipo H5P (nuevo) | Verbo | Curso | Por qué |
-|:--|:--|:--|:--|:--|
-| Empareja EcoGesto–impacto | **Memory Game** | Relacionar | Educación ambiental | Cubre *gamificación* (tipo nuevo) |
-| Primera reunión con una pyme | **Branching Scenario** | Decidir | Embajador Climático | Cubre *gamificación* + toma de decisiones |
-| Huella personal en 5 decisiones | **Course Presentation** | Identificar | Huella Personal | Tipo nuevo (microlección) |
-| Cómo calcular tu huella | **Interactive Video** | Aplicar | Huella Personal | Tipo nuevo (vídeo activo) |
-| Camino de una entidad hacia MITECO | **Timeline** | Ordenar | Registro MITECO | Tipo nuevo (secuenciación) |
-| ¿Qué acción reduce más la huella? | **Multiple Choice** | Comparar | Huella Personal | Tipo nuevo (decisión con feedback) |
-| Ordena el proceso de compostaje | **Image Sequencing** | Ordenar | EcoGestos | Tipo nuevo (secuencia) |
-| ¿Dónde se concentra la huella? | **Chart** | Interpretar | Huella Personal | Tipo nuevo (datos) |
-| FAQ de soporte del Campus | **Accordion** | Consultar | Soporte | Refuerza explicación |
-| Checklist de evento bajo en carbono | **Mark the Words** | Identificar | Eventos sostenibles | Tipo nuevo |
+| Código | OA | Tipo H5P | Familia | Verbo | Estado |
+|:--|:--|:--|:--|:--|:--|
+| OA-11 | Empareja el EcoGesto con su impacto | **Memory Game** | Gamificación | Relacionar | 📝 Diseñado · falta construir |
+| OA-12 | Primera reunión con una pyme | **Branching Scenario** | Gamificación | Decidir | 📝 Diseñado · falta construir |
+| OA-13 | Tu huella personal en 5 decisiones | Course Presentation | Explicación | Identificar | 📝 Diseñado · falta construir |
+| OA-14 | Cómo calcular tu huella de carbono | Interactive Video | Práctica | Aplicar | 📝 Diseñado · falta construir |
+| OA-15 | El camino de una entidad hacia el MITECO | Timeline | Práctica | Ordenar | 📝 Diseñado · falta construir |
+| OA-16 | Qué acción reduce más tu huella | Multiple Choice | Evaluación | Comparar | 📝 Diseñado · falta construir |
+| OA-17 | Ordena el proceso de compostaje | Image Sequencing | Práctica | Ordenar | 📝 Diseñado · falta construir |
+| OA-18 | Dónde se concentra tu huella | Chart | Práctica | Interpretar | 📝 Diseñado · falta construir |
+| OA-19 | FAQ de soporte del Campus | Accordion | Explicación | Consultar | 📝 Diseñado · falta construir |
+| OA-20 | Checklist de un evento bajo en carbono | Mark the Words | Práctica | Identificar | 📝 Diseñado · falta construir |
 
-> El plan pide ≥20 OA producidos/prototipados (10 terminados). Con estos 10 pendientes se alcanzaría el
-> objetivo de 20 y se cubrirían los tipos que hoy faltan (gamificación incluida).
+> **Estado global**: 10 terminados + 10 diseñados = **20 OA prototipados** ✅ (cumple el mínimo del plan).
+> Los tipos de **gamificación** (Memory Game, Branching Scenario) ya están diseñados; quedan por **autorizar
+> y empaquetar** en el editor H5P, paso que no puede hacerse fuera de un entorno de autoría H5P.
